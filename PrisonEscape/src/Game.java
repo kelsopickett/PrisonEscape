@@ -59,7 +59,7 @@ public class Game {
 		 * 	c) hide behind something; run over by bus, die and lose
 		 * 	d) embrace death; toss shank, bus runs it over, tire pops and veers away... advance
 		 */
-		// TODO If the user advances, display the eighth scene and score (ext. outside prison walls); else, take action based on user choice
+		// TODO If the user advances, display eighth scene (ext. outside prison walls) and score; else, take action based on user choice
 	}
 
 }
