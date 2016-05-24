@@ -128,6 +128,7 @@ public class PrisonEscape {
 		gitmo[7] = escape;
 
 		System.out.println(gitmo[currentScene].description);
+		// the code below attempts to update the textArea (where scene is displayed) with current scene information, but doesn't work
 		textArea.setText(gitmo[currentScene].description);
 		
 	}
