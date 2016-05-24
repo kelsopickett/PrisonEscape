@@ -54,6 +54,10 @@ public class PrisonEscape {
 		frame.getContentPane().add(textArea);
 		
 		btnOptionA = new JButton("Option A");
+		btnOptionA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnOptionA.setBounds(20, 330, 600, 30);
 		frame.getContentPane().add(btnOptionA);
 		
