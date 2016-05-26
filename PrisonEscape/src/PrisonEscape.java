@@ -9,8 +9,7 @@ import java.awt.event.ActionEvent;
 public class PrisonEscape {
 
 	private JFrame frame;
-	private JTextArea textArea;
-	private JButton btnOptionA;
+	private static JTextArea textArea;
 
 	/**
 	 * Launch the application.
@@ -21,13 +20,14 @@ public class PrisonEscape {
 				try {
 					PrisonEscape window = new PrisonEscape();
 					window.frame.setVisible(true);
+					window.newGame();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
 		
-		newGame();
+		//newGame();
 		
 	}
 
@@ -49,15 +49,13 @@ public class PrisonEscape {
 		frame.getContentPane().setLayout(null);
 		
 		textArea = new JTextArea();
+		textArea.setWrapStyleWord(true);
+		textArea.setLineWrap(true);
 		textArea.setEditable(false);
 		textArea.setBounds(20, 20, 600, 300);
 		frame.getContentPane().add(textArea);
 		
-		btnOptionA = new JButton("Option A");
-		btnOptionA.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		JButton btnOptionA = new JButton("Option A");
 		btnOptionA.setBounds(20, 330, 600, 30);
 		frame.getContentPane().add(btnOptionA);
 		
@@ -74,7 +72,7 @@ public class PrisonEscape {
 		frame.getContentPane().add(btnOptionD);
 	}
 
-	private static void newGame() {
+	private void newGame() {
 		
 		int currentScene = 0;
 		
