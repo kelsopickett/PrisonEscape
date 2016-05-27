@@ -132,7 +132,6 @@ public class PrisonEscape {
 		gitmo[7] = escape;
 
 		int currentScene = 0;
-		
 		// render scene 0 description in textArea and user options in buttons A-D
 		textArea.setText(gitmo[currentScene].description);
 		btnOptionA.setText(gitmo[currentScene].choiceA);
