@@ -14,6 +14,7 @@ public class PrisonEscape {
 	private JButton btnOptionB;
 	private JButton btnOptionC;
 	private JButton btnOptionD;
+	private int currentScene;
 
 	/**
 	 * Launch the application.
@@ -131,7 +132,7 @@ public class PrisonEscape {
 		gitmo[6] = entrance;
 		gitmo[7] = escape;
 
-		int currentScene = 0;
+		currentScene = 0;
 		// render scene 0 description in textArea and user options in buttons A-D
 		textArea.setText(gitmo[currentScene].description);
 		btnOptionA.setText(gitmo[currentScene].choiceA);
@@ -167,12 +168,12 @@ public class PrisonEscape {
 			public void actionPerformed(ActionEvent e) {
 				// user approaches cell door, if they have a lockpick they get out, if not they get out less health
 				if (true /* true is a placeholder, condition should be "if user has lockpick" */) {
-					// currentScene++;
-					textArea.setText(gitmo[1].description);
-					btnOptionA.setText(gitmo[1].choiceA);
-					btnOptionB.setText(gitmo[1].choiceB);
-					btnOptionC.setText(gitmo[1].choiceC);
-					btnOptionD.setText(gitmo[1].choiceD);
+					currentScene++;
+					textArea.setText(gitmo[currentScene].description);
+					btnOptionA.setText(gitmo[currentScene].choiceA);
+					btnOptionB.setText(gitmo[currentScene].choiceB);
+					btnOptionC.setText(gitmo[currentScene].choiceC);
+					btnOptionD.setText(gitmo[currentScene].choiceD);
 				}
 			}
 		});
