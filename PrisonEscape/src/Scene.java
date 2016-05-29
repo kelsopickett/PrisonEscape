@@ -1,13 +1,22 @@
 public class Scene {
 	
-	String description;
-	int cigsAvail;
-	String choiceA;
-	String choiceB;
-	String choiceC;
-	String choiceD;
+	public String mDescription;
+	public int cigsAvail;
+	public String choiceA;
+	public String choiceB;
+	public String choiceC;
+	public String choiceD;
 	
-	public Scene(String description, int cigsAvail, String choiceA, String choiceB, String choiceC, String choiceD) {
+	public Scene(String descriptionP, int cigsAvailP, String choiceAP, String choiceBP, String choiceCP, String choiceDP) {
+		mDescription = descriptionP;
+		cigsAvail = cigsAvailP;
+		choiceA = choiceAP;
+		choiceB = choiceBP;
+		choiceC = choiceCP;
+		choiceD = choiceDP;
 		
+	}
+	public Scene(String description) {
+		mDescription = description;
 	}
 }

@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 public class PrisonEscape {
 
 	private JFrame frame;
-	private JTextArea textArea;
+	public static JTextArea textArea;
 	private JButton btnOptionA;
 
 	/**
@@ -27,7 +27,7 @@ public class PrisonEscape {
 			}
 		});
 		
-		newGame();
+	
 		
 	}
 
@@ -48,7 +48,7 @@ public class PrisonEscape {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		textArea = new JTextArea();
+		JTextArea textArea = new JTextArea();
 		textArea.setEditable(false);
 		textArea.setBounds(20, 20, 600, 300);
 		frame.getContentPane().add(textArea);
@@ -72,7 +72,7 @@ public class PrisonEscape {
 
 	private static void newGame() {
 		
-		int currentScene = 0;
+		
 		
 		// initialise rooms-- parameters: String description, int cigsAvail, choiceA, choiceB, choiceC, choiceD
 		Scene cell = new Scene("You awake to find yourself in a dark cell. The small, barred window above bathes you in a rich,"
@@ -80,7 +80,7 @@ public class PrisonEscape {
 				+ " as you attempt to sit upright. Your feet reach the floor and you feel it, cold and damp, through the thin"
 				+ " soles of your shoes. What do you do?", 3, 
 				"Search room for something useful.", "Make toilet wine.", "Crawl back in bed.", "Approach your cell door.");
-		cell.description = ("You awake to find yourself in a dark cell. The small, barred window above bathes you in a rich,"
+		cell.mDescription = ("You awake to find yourself in a dark cell. The small, barred window above bathes you in a rich,"
 				+ " warm light. You look down to discover you are covered in blood and bruises. Pain shoots through your body"
 				+ " as you attempt to sit upright. Your feet reach the floor and you feel it, cold and damp, through the thin"
 				+ " soles of your shoes. What do you do?");
@@ -127,9 +127,9 @@ public class PrisonEscape {
 		gitmo[6] = entrance;
 		gitmo[7] = escape;
 
-		System.out.println(gitmo[currentScene].description);
+		
 		// the code below attempts to update the textArea (where scene is displayed) with current scene information, but doesn't work
-		textArea.setText(gitmo[currentScene].description);
+		textArea.setText("0.0");
 		
 	}
 }
