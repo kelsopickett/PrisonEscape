@@ -9,8 +9,15 @@ import java.awt.event.ActionEvent;
 public class PrisonEscape {
 
 	private JFrame frame;
+
 	public static JTextArea textArea;
+	
+
 	private JButton btnOptionA;
+	private JButton btnOptionB;
+	private JButton btnOptionC;
+	private JButton btnOptionD;
+	private int currentScene;
 
 	/**
 	 * Launch the application.
@@ -21,6 +28,7 @@ public class PrisonEscape {
 				try {
 					PrisonEscape window = new PrisonEscape();
 					window.frame.setVisible(true);
+					window.newGame();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -28,6 +36,8 @@ public class PrisonEscape {
 		});
 		
 	
+		//newGame();
+
 		
 	}
 
@@ -48,7 +58,11 @@ public class PrisonEscape {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+
 		JTextArea textArea = new JTextArea();
+		textArea = new JTextArea();
+		textArea.setWrapStyleWord(true);
+		textArea.setLineWrap(true);
 		textArea.setEditable(false);
 		textArea.setBounds(20, 20, 600, 300);
 		frame.getContentPane().add(textArea);
@@ -57,22 +71,26 @@ public class PrisonEscape {
 		btnOptionA.setBounds(20, 330, 600, 30);
 		frame.getContentPane().add(btnOptionA);
 		
-		JButton btnOptionB = new JButton("Option B");
+		btnOptionB = new JButton("Option B");
 		btnOptionB.setBounds(20, 360, 600, 30);
 		frame.getContentPane().add(btnOptionB);
 		
-		JButton btnOptionC = new JButton("Option C");
+		btnOptionC = new JButton("Option C");
 		btnOptionC.setBounds(20, 390, 600, 30);
 		frame.getContentPane().add(btnOptionC);
 		
-		JButton btnOptionD = new JButton("Option D");
+		btnOptionD = new JButton("Option D");
 		btnOptionD.setBounds(20, 420, 600, 30);
 		frame.getContentPane().add(btnOptionD);
 	}
 
-	private static void newGame() {
+
+	
 		
 		
+
+	private void newGame() {
+
 		
 		// initialise rooms-- parameters: String description, int cigsAvail, choiceA, choiceB, choiceC, choiceD
 		Scene cell = new Scene("You awake to find yourself in a dark cell. The small, barred window above bathes you in a rich,"
@@ -127,9 +145,57 @@ public class PrisonEscape {
 		gitmo[6] = entrance;
 		gitmo[7] = escape;
 
+
 		
 		// the code below attempts to update the textArea (where scene is displayed) with current scene information, but doesn't work
 		textArea.setText("0.0");
+
+		currentScene = 0;
+		// render scene 0 description in textArea and user options in buttons A-D
+		textArea.setText(gitmo[currentScene].mDescription);
+		btnOptionA.setText(gitmo[currentScene].choiceA);
+		btnOptionB.setText(gitmo[currentScene].choiceB);
+		btnOptionC.setText(gitmo[currentScene].choiceC);
+		btnOptionD.setText(gitmo[currentScene].choiceD);
+		
+		// user choice = option a
+		btnOptionA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// user searches the room, finds a lockpick and a shank
+				textArea.setText("The cell is sparse; not much to search through. You rummage under the shit excuse for"
+						+ " a mattress until something pokes your hands. Flipping the mattress over reveals a crudely"
+						+ " made shank embedded inside. This might be useful. \n\nNext, you turn to the wash basin and notice"
+						+ " a thin strand of metal wound around a pipe fitting. It looks small enough to fit in the cell"
+						+ " door's keyhole. You pull it free from the pipe. \n\nWhat next?");
+			}
+		});
+		// user choice = option b
+		btnOptionB.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// user makes toilet wine, ++hp
+			}
+		});
+		// user choice = option c
+		btnOptionC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// user gets back in bed, is killed
+			}
+		});
+		// user choice = option d
+		btnOptionD.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// user approaches cell door, if they have a lockpick they get out, if not they get out less health
+				if (true /* true is a placeholder, condition should be "if user has lockpick" */) {
+					currentScene++;
+					textArea.setText(gitmo[currentScene].mDescription);
+					btnOptionA.setText(gitmo[currentScene].choiceA);
+					btnOptionB.setText(gitmo[currentScene].choiceB);
+					btnOptionC.setText(gitmo[currentScene].choiceC);
+					btnOptionD.setText(gitmo[currentScene].choiceD);
+				}
+			}
+		});
+
 		
 	}
 }

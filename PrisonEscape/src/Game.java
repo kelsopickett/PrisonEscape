@@ -1,10 +1,28 @@
 
 public class Game {
+	
+	private static boolean running = true;
 
 	public static void main(String[] args) {
 		
 		// TODO Start menu, only option is "Start a New Game"
 		newGame();
+		
+		//Instantiate system objects and set their respective pointers
+		
+				Player paul = new Player();
+				NonPlayerChar dickhead = new NonPlayerChar();
+				paul.getHealth();
+				paul.setName("Paul");
+				System.out.println(paul.getHealth());
+				
+				System.out.println(paul.getHealth());
+				//TODO Declare Game methods
+				//TODO Play and Draw game
+				do{ //start new game
+					
+				} while(running); //exited by player causes end of main
+				
 	}
 
 	private static void newGame() {
