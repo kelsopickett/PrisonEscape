@@ -89,7 +89,7 @@ public class PrisonEscape {
 		
 		
 
-	private void newGame() {
+	private static void newGame() {
 
 		
 		// initialise rooms-- parameters: String description, int cigsAvail, choiceA, choiceB, choiceC, choiceD
@@ -186,7 +186,7 @@ public class PrisonEscape {
 			public void actionPerformed(ActionEvent e) {
 				// user approaches cell door, if they have a lockpick they get out, if not they get out less health
 				if (true /* true is a placeholder, condition should be "if user has lockpick" */) {
-					currentScene++;
+					//currentScene++;
 					textArea.setText(gitmo[currentScene].mDescription);
 					btnOptionA.setText(gitmo[currentScene].choiceA);
 					btnOptionB.setText(gitmo[currentScene].choiceB);
