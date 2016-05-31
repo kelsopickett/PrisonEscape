@@ -7,17 +7,16 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class PrisonEscape {
-	//Declare objects
-	private static JFrame frame;
 
+	// Declare objects
+	private JFrame frame;
 	private static JTextArea textArea;
-	
-	//Declare instance fields
-	private static JButton btnOptionA;
-	private static JButton btnOptionB;
-	private static JButton btnOptionC;
-	private static JButton btnOptionD;
-	private static int currentScene;
+	// Declare instance fields
+	private JButton btnOptionA;
+	private JButton btnOptionB;
+	private JButton btnOptionC;
+	private JButton btnOptionD;
+	private int currentScene;
 
 	/**
 	 * Launch the application.
@@ -28,16 +27,12 @@ public class PrisonEscape {
 				try {
 					PrisonEscape window = new PrisonEscape();
 					window.frame.setVisible(true);
-					//window.newGame();
+					window.newGame();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
-		
-	
-		newGame();
-
 		
 	}
 
@@ -58,8 +53,6 @@ public class PrisonEscape {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-
-		JTextArea textArea = new JTextArea();
 		textArea = new JTextArea();
 		textArea.setWrapStyleWord(true);
 		textArea.setLineWrap(true);
@@ -89,8 +82,7 @@ public class PrisonEscape {
 		
 		
 
-	public static void newGame() {
-
+	public void newGame() {
 		
 		// initialise rooms-- parameters: String description, int cigsAvail, choiceA, choiceB, choiceC, choiceD
 		Scene cell = new Scene("You awake to find yourself in a dark cell. The small, barred window above bathes you in a rich,"
@@ -98,10 +90,6 @@ public class PrisonEscape {
 				+ " as you attempt to sit upright. Your feet reach the floor and you feel it, cold and damp, through the thin"
 				+ " soles of your shoes. What do you do?", 3, 
 				"Search room for something useful.", "Make toilet wine.", "Crawl back in bed.", "Approach your cell door.");
-		cell.mDescription = ("You awake to find yourself in a dark cell. The small, barred window above bathes you in a rich,"
-				+ " warm light. You look down to discover you are covered in blood and bruises. Pain shoots through your body"
-				+ " as you attempt to sit upright. Your feet reach the floor and you feel it, cold and damp, through the thin"
-				+ " soles of your shoes. What do you do?");
 		Scene hallway = new Scene("You successfully pick the lock and exit into the hallway. A sound to your right draws your"
 				+ " attention, and you turn to find a fellow inmate brandishing a shank. How do you proceed?", 0, 
 				"Turn and flee.", "Stand and fight.", "Assume the fetal position.", "Attempt to talk your way out.");
@@ -112,8 +100,7 @@ public class PrisonEscape {
 				"Take the prisoners by surprise.", "Sneak to the kitchen.", "Hide in the corridor.", "Backtrack down the corridor.");
 		Scene kitchen = new Scene("Keeping an eye on the cafeteria, you press your back to the swinging doors into the kitchen."
 				+ " As you cross the threshold, a hand grabs you from behind with another presses a knife to your throat. You hear"
-				+ " the cook's distinctive chuckle as he recognises you. \"Alright, " // + INSERT PLAYER NAME HERE
-				+ "... You're good people. I'll let you go if you can answer this riddle... Poor people have it, rich people need"
+				+ " the cook's distinctive chuckle as he recognises you. \"Alright... you're good people. I'll let you go if you can answer this riddle... Poor people have it, rich people need"
 				+ " it, but if you eat it, you die.\"", 0, 
 				"\"I don't know.\"", "\"I AM THE 1%!\"", "\"Just let me go.\"", "\"Nothing.\"");
 		Scene yard = new Scene("Your answer satisfies the cook. He ushers you toward the corner of the room and into the rubbish"
@@ -144,11 +131,6 @@ public class PrisonEscape {
 		gitmo[5] = infirmary;
 		gitmo[6] = entrance;
 		gitmo[7] = escape;
-
-
-		
-		// the code below attempts to update the textArea (where scene is displayed) with current scene information, but doesn't work
-		textArea.setText("0.0");
 
 		currentScene = 0;
 		// render scene 0 description in textArea and user options in buttons A-D
