@@ -5,11 +5,7 @@ public class Scene {
 	public String choiceA;
 	public String choiceB;
 	public String choiceC;
-	public String choiceD;
-	
-
-
-		
+	public String choiceD;	
 
 	public Scene(String description, int cigsAvail, String choiceA, String choiceB, String choiceC, String choiceD) {
 		this.mDescription = description;
@@ -18,8 +14,8 @@ public class Scene {
 		this.choiceB = choiceB;
 		this.choiceC = choiceC;
 		this.choiceD = choiceD;
-
 	}
+	
 	public Scene(String description) {
 		mDescription = description;
 	}
