@@ -597,4 +597,8 @@ public class PrisonEscape {
 			}
 		});
 	}
+
+	protected void sceneEight() {
+		// TODO Final scene
+	}
 }
