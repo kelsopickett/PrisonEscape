@@ -18,70 +18,13 @@ public class PrisonEscape {
 	private JButton btnOptionB;
 	private JButton btnOptionC;
 	private JButton btnOptionD;
-	private int currentScene;
+	private int currentScene = 0;
+	static Scene[] gitmo = new Scene[8];
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PrisonEscape window = new PrisonEscape();
-					window.frame.setVisible(true);
-					window.newGame();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		
-	}
-
-	/**
-	 * Create the application.
-	 */
-	public PrisonEscape() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setResizable(false);
-		frame.setBounds(100, 100, 640, 480);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		
-		textArea = new JTextArea();
-		textArea.setWrapStyleWord(true);
-		textArea.setLineWrap(true);
-		textArea.setEditable(false);
-		textArea.setBounds(20, 20, 600, 300);
-		textArea.setMargin(new Insets(10,10,10,10));
-		frame.getContentPane().add(textArea);
-		
-		btnOptionA = new JButton("Option A");
-		btnOptionA.setBounds(20, 330, 600, 30);
-		frame.getContentPane().add(btnOptionA);
-		
-		btnOptionB = new JButton("Option B");
-		btnOptionB.setBounds(20, 360, 600, 30);
-		frame.getContentPane().add(btnOptionB);
-		
-		btnOptionC = new JButton("Option C");
-		btnOptionC.setBounds(20, 390, 600, 30);
-		frame.getContentPane().add(btnOptionC);
-		
-		btnOptionD = new JButton("Option D");
-		btnOptionD.setBounds(20, 420, 600, 30);
-		frame.getContentPane().add(btnOptionD);
-	}
-	
-
-	public void newGame() {
 		
 		// initialise rooms-- parameters: String description, int cigsAvail, choiceA, choiceB, choiceC, choiceD, resultA, resultB, resultC, resultD
 		Scene cell = new Scene("You awake to find yourself in a dark cell.\n\nThe small, barred window above bathes you in a rich,"
@@ -140,7 +83,6 @@ public class PrisonEscape {
 				"Start a new game.", "", "", "Quit");
 		
 		// init array of eight scenes named gitmo
-		Scene[] gitmo = new Scene[8];
 		gitmo[0] = cell;
 		gitmo[1] = hallway;
 		gitmo[2] = cafeteria;
@@ -149,14 +91,69 @@ public class PrisonEscape {
 		gitmo[5] = infirmary;
 		gitmo[6] = entrance;
 		gitmo[7] = escape;
+		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					PrisonEscape window = new PrisonEscape();
+					window.frame.setVisible(true);
+					window.sceneOne();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
+	}
 
-		currentScene = 0;
+	/**
+	 * Create the application.
+	 */
+	public PrisonEscape() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setResizable(false);
+		frame.setBounds(100, 100, 640, 480);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		textArea = new JTextArea();
+		textArea.setWrapStyleWord(true);
+		textArea.setLineWrap(true);
+		textArea.setEditable(false);
+		textArea.setBounds(20, 20, 600, 300);
+		textArea.setMargin(new Insets(10,10,10,10));
+		frame.getContentPane().add(textArea);
+		
+		btnOptionA = new JButton("Option A");
+		btnOptionA.setBounds(20, 330, 600, 30);
+		frame.getContentPane().add(btnOptionA);
+		
+		btnOptionB = new JButton("Option B");
+		btnOptionB.setBounds(20, 360, 600, 30);
+		frame.getContentPane().add(btnOptionB);
+		
+		btnOptionC = new JButton("Option C");
+		btnOptionC.setBounds(20, 390, 600, 30);
+		frame.getContentPane().add(btnOptionC);
+		
+		btnOptionD = new JButton("Option D");
+		btnOptionD.setBounds(20, 420, 600, 30);
+		frame.getContentPane().add(btnOptionD);
+	}
+	
+
+	public void sceneOne() {
+
 		// Render first scene description in textArea and user options in buttons A-D
 		textArea.setText(gitmo[currentScene].description);
-		btnOptionA.setText(gitmo[currentScene].choiceA);
-		btnOptionB.setText(gitmo[currentScene].choiceB);
-		btnOptionC.setText(gitmo[currentScene].choiceC);
-		btnOptionD.setText(gitmo[currentScene].choiceD);
+		updateChoices();
 		
 		// user choice = option a
 		btnOptionA.addActionListener(new ActionListener() {
@@ -168,11 +165,9 @@ public class PrisonEscape {
 				// unassign action from button so it can be reassigned in next scene
 				((AbstractButton) e.getSource()).removeActionListener(this);
 				// update user choice buttons
-				btnOptionA.setText(gitmo[currentScene].choiceA);
-				btnOptionB.setText(gitmo[currentScene].choiceB);
-				btnOptionC.setText(gitmo[currentScene].choiceC);
-				btnOptionD.setText(gitmo[currentScene].choiceD);
-				//TODO advance to second scene
+				updateChoices();
+				// advance to second scene
+				sceneTwo();
 			}
 		});
 		// user choice = option b
@@ -185,11 +180,9 @@ public class PrisonEscape {
 				// unassign action from button so it can be reassigned in next scene
 				((AbstractButton) e.getSource()).removeActionListener(this);
 				// update user choice buttons
-				btnOptionA.setText(gitmo[currentScene].choiceA);
-				btnOptionB.setText(gitmo[currentScene].choiceB);
-				btnOptionC.setText(gitmo[currentScene].choiceC);
-				btnOptionD.setText(gitmo[currentScene].choiceD);
-				//TODO advance to second scene
+				updateChoices();
+				// advance to second scene
+				sceneTwo();
 			}
 		});
 		// user choice = option c
@@ -197,6 +190,7 @@ public class PrisonEscape {
 			public void actionPerformed(ActionEvent e) {
 				// user gets back in bed, is killed
 				textArea.setText(gitmo[currentScene].resultC);
+				//TODO GAME OVER
 				// unassign action from button so it can be reassigned in next scene
 				((AbstractButton) e.getSource()).removeActionListener(this);
 			}
@@ -209,99 +203,131 @@ public class PrisonEscape {
 				// increment scene counter to second scene
 				currentScene++;
 				// Update user choice buttons
-				btnOptionA.setText(gitmo[currentScene].choiceA);
-				btnOptionB.setText(gitmo[currentScene].choiceB);
-				btnOptionC.setText(gitmo[currentScene].choiceC);
-				btnOptionD.setText(gitmo[currentScene].choiceD);
+				updateChoices();
 				// unassign action from button so it can be reassigned in next scene
 				((AbstractButton) e.getSource()).removeActionListener(this);
-				/* 
-				 * Assign new actions to each button
-				 */
-				// user choice = option a
-				btnOptionA.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						// user decides to turn and flee, advancing them to the next scene sans consequence
-						currentScene++;
-						// Render third scene description in textArea and user options in buttons A-D
-						textArea.setText(gitmo[currentScene].description);
-						btnOptionA.setText(gitmo[currentScene].choiceA);
-						btnOptionB.setText(gitmo[currentScene].choiceB);
-						btnOptionC.setText(gitmo[currentScene].choiceC);
-						btnOptionD.setText(gitmo[currentScene].choiceD);
-						// unassign action from button so it can be reassigned in next scene
-						((AbstractButton) e.getSource()).removeActionListener(this);
-						/* 
-						 * Assign new actions to each button
-						 */
-						// user choice = option a
-						btnOptionA.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent e) {
-								// user decides to take the prisoners by surprise, resulting in loss by death
-								//TODO consequences of this action
-								// unassign action from button so it can be reassigned in next scene
-								((AbstractButton) e.getSource()).removeActionListener(this);
-							}
-						});
-						// user choice = option b
-						btnOptionB.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent e) {
-								//  user decides to sneak to the kitchen
-								//TODO consequences of this action
-								// unassign action from button so it can be reassigned in next scene
-								((AbstractButton) e.getSource()).removeActionListener(this);
-							}
-						});
-						// user choice = option c
-						btnOptionC.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent e) {
-								//  user decides to hide in the corridor, resulting in loss by death
-								//TODO consequences of this action
-								// unassign action from button so it can be reassigned in next scene
-								((AbstractButton) e.getSource()).removeActionListener(this);
-							}
-						});
-						// user choice = option d
-						btnOptionD.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent e) {
-								//  user decides to backtrack down corridor, resulting in guard encounter (-- cigs, adv)
-								//TODO consequences of this action
-								// unassign action from button so it can be reassigned in next scene
-								((AbstractButton) e.getSource()).removeActionListener(this);
-							}
-						});
-					}
-				});
-				// user choice = option b
-				btnOptionB.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						// user descides to stand and fight, combat ensues and user advances less health plus items
-						//TODO consequences of this action
-						// unassign action from button so it can be reassigned in next scene
-						((AbstractButton) e.getSource()).removeActionListener(this);
-					}
-				});
-				// user choice = option c
-				btnOptionC.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						// user decides to assume the fetal position, this results in GAME OVER
-						//TODO consequences of this action
-						// unassign action from button so it can be reassigned in next scene
-						((AbstractButton) e.getSource()).removeActionListener(this);
-					}
-				});
-				// user choice = option d
-				btnOptionD.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						// user decides to talk their way out, user advances with an item?
-						//TODO consequences of this action
-						// unassign action from button so it can be reassigned in next scene
-						((AbstractButton) e.getSource()).removeActionListener(this);
-					}
-				});
+				// advance to second scene
+				sceneTwo();
 			}
 		});
 
+	}
+
+	private void updateChoices() {
+		btnOptionA.setText(gitmo[currentScene].choiceA);
+		btnOptionB.setText(gitmo[currentScene].choiceB);
+		btnOptionC.setText(gitmo[currentScene].choiceC);
+		btnOptionD.setText(gitmo[currentScene].choiceD);
+	}
+
+	protected void sceneTwo() {
+		// user choice = option a: turn and flee, advancing them to the next scene sans consequence
+		btnOptionA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// render result of choice and subsequent scene
+				textArea.setText(gitmo[currentScene].resultA + "\n\n" + gitmo[(currentScene + 1)].description);
+				// increment scene counter to third scene
+				currentScene++;
+				// Update user choices
+				updateChoices();
+				// unassign action from button so it can be reassigned in next scene
+				((AbstractButton) e.getSource()).removeActionListener(this);
+				// advance to third scene
+				sceneThree();
+			}
+		});
+		// user choice = option b: stand and fight, combat ensues and user advances less health plus items
+		btnOptionB.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// render result of choice and subsequent scene
+				textArea.setText(gitmo[currentScene].resultB + "\n\n" + gitmo[(currentScene + 1)].description);
+				// increment scene counter to third scene
+				currentScene++;
+				//TODO consequences of this action
+				// unassign action from button so it can be reassigned in next scene
+				((AbstractButton) e.getSource()).removeActionListener(this);
+				// advance to third scene
+				sceneThree();
+			}
+		});
+		// user choice = option c: assume the fetal position, this results in GAME OVER
+		btnOptionC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// render result of choice
+				textArea.setText(gitmo[currentScene].resultC);
+				//TODO consequences of this action
+				// unassign action from button so it can be reassigned in next scene
+				((AbstractButton) e.getSource()).removeActionListener(this);
+			}
+		});
+		// user choice = option d: talk their way out, user advances with an item?
+		btnOptionD.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// render result of choice and subsequent scene
+				textArea.setText(gitmo[currentScene].resultD + "\n\n" + gitmo[(currentScene + 1)].description);
+				// increment scene counter to third scene
+				currentScene++;
+				//TODO consequences of this action
+				// unassign action from button so it can be reassigned in next scene
+				((AbstractButton) e.getSource()).removeActionListener(this);
+				// advance to third scene
+				sceneThree();
+			}
+		});
+	}
+
+	protected void sceneThree() {
+		// user choice = option a: take the prisoners by surprise, resulting in loss by death
+		btnOptionA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// render result of choice
+				textArea.setText(gitmo[currentScene].resultA);
+				//TODO GAME OVER
+				// unassign action from button so it can be reassigned in next scene
+				((AbstractButton) e.getSource()).removeActionListener(this);
+			}
+		});
+		// user choice = option b: sneak to the kitchen
+		btnOptionB.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// render result of choice and subsequent scene
+				textArea.setText(gitmo[currentScene].resultB + "\n\n" + gitmo[(currentScene + 1)].description);
+				// increment scene counter to third scene
+				currentScene++;
+				//TODO consequences of this action
+				// unassign action from button so it can be reassigned in next scene
+				((AbstractButton) e.getSource()).removeActionListener(this);
+				// Advance to scene four
+				sceneFour();
+			}
+		});
+		// user choice = option c: hide in the corridor, resulting in loss by death
+		btnOptionC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// render result of choice and subsequent scene
+				textArea.setText(gitmo[currentScene].resultC);
+				//TODO GAME OVER
+				// unassign action from button so it can be reassigned in next scene
+				((AbstractButton) e.getSource()).removeActionListener(this);
+			}
+		});
+		// user choice = option d: backtrack down corridor, resulting in guard encounter (-- cigs, adv)
+		btnOptionD.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//  Render result of choice and subsequent scene
+				textArea.setText(gitmo[currentScene].resultD + "\n\n" + gitmo[(currentScene + 1)].description);
+				// increment scene counter to third scene
+				currentScene++;
+				//TODO consequences of this action
+				// unassign action from button so it can be reassigned in next scene
+				((AbstractButton) e.getSource()).removeActionListener(this);
+				sceneFour();
+			}
+		});
+	}
+
+	protected void sceneFour() {
+		// TODO Auto-generated method stub
 		
 	}
 }
