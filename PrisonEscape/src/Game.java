@@ -103,26 +103,26 @@ public class Game {
 			 * 	d) answer riddle; correct answer, advance
 			 */
 		// TODO If the user advances, display the fifth scene (ext. yard); else display result of user choice
-		/* TODO Get user choice for fifth scene
-		 * 	a) turn and run; combat (chance for --health), advance if alive
-		 * 	b) climb up rubbish chute; shot to death by guard
-		 * 	c) bribe guard with cigarettes; advance (--cigarettes)
-		 * 	d) surrender; lose but no death
-		 */
+			/* TODO Get user choice for fifth scene
+			 * 	a) turn and run; combat (chance for --health), advance if alive
+			 * 	b) climb up rubbish chute; shot to death by guard
+			 * 	c) bribe guard with cigarettes; advance (--cigarettes)
+			 * 	d) surrender; lose but no death
+			 */
 		// TODO If the user advances, display the sixth scene (infirmary); else display result of user choice
-		/* TODO Get user choice for sixth scene
-		 * 	a) accept offer of help; something bad happens, lose
-		 * 	b) fight the doctor/nurse; combat (chance for --health, item drop), advance if alive
-		 * 	c) ignore, search for items (chance for ++health, item drop); advance
-		 * 	d) have mental breakdown; doctor/nurse consoles you (++cigarette), advance
-		 */
+			/* TODO Get user choice for sixth scene
+			 * 	a) accept offer of help; something bad happens, lose
+			 * 	b) fight the doctor/nurse; combat (chance for --health, item drop), advance if alive
+			 * 	c) ignore, search for items (chance for ++health, item drop); advance
+			 * 	d) have mental breakdown; doctor/nurse consoles you (++cigarette), advance
+			 */
 		// TODO If the user advances, display the seventh scene (ext. front yard); else display result of user choice
-		/* TODO Get user choice for seventh scene
-		 * 	a) throw knife at bus driver; combat (really low chance of success), advance if alive
-		 * 	b) turn and run; bus rolls, explodes, and you black out... return to first scene
-		 * 	c) hide behind something; run over by bus, die and lose
-		 * 	d) embrace death; toss shank, bus runs it over, tire pops and veers away... advance
-		 */
+			/* TODO Get user choice for seventh scene
+			 * 	a) throw knife at bus driver; combat (really low chance of success), advance if alive
+			 * 	b) turn and run; bus rolls, explodes, and you black out... return to first scene
+			 * 	c) hide behind something; run over by bus, die and lose
+			 * 	d) embrace death; toss shank, bus runs it over, tire pops and veers away... advance
+			 */
 		// TODO If the user advances, display eighth scene (ext. outside prison walls) and score; else, take action based on user choice
 	}
 
