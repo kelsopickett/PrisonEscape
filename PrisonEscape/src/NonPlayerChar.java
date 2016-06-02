@@ -7,7 +7,7 @@ public class NonPlayerChar {
 		public static final int MAX_HEALTH = 10000;
 		public static final int MAX_ATTACK_DAMAGE = 150;
 		
-		//Declare player states
+		//Declare npc states
 		private int mHealth;
 		private int mAttackDamage;
 		private String mName;
@@ -100,5 +100,9 @@ public class NonPlayerChar {
 				
 				public void LiveorDead(boolean alive) {
 					mAlive = alive;
+				}
+				
+				public String toString(){
+					return mName;
 				}
 }

@@ -13,14 +13,18 @@ public class Player {
 	private int mSmokes;
 	private String mName;
 	private boolean mAlive;
+	private int mWineCount;
+	private int mShankCount;
 
 	// Declare, Define, and Overload Player constructor
 	public Player() {
 		mHealth = 350;
 		mAttackDamage = 50;
 		mSmokes = 20;
-		mName = "Player 1";
+		mName = "You";
 		mAlive = true;
+		mWineCount = 0;
+		mShankCount = 0;
 	}
 
 	public Player(int wakeHealth, int wakeDamage, int wakeSmokes, String wakeName, boolean qAlive) {
@@ -29,6 +33,8 @@ public class Player {
 		mSmokes = wakeSmokes;
 		mName = wakeName;
 		mAlive = qAlive;
+		mWineCount = 0;
+		mShankCount = 0;
 	}
 
 	// TODO create Player behavior methods
@@ -73,7 +79,7 @@ public class Player {
 	}
 	
 	public void setSmokes(int smokes){
-		mSmokes = smokes;
+		mSmokes += smokes;
 		
 	}
 	
@@ -106,5 +112,23 @@ public class Player {
 	}
 	public String toString(){
 		return mName;
+	}
+	
+	public int getWineCount(){
+		return mWineCount;
+	}
+	
+	public void setWineCount(int wine){
+		mWineCount += wine;
+		
+	}
+	
+	public int getShankCount(){
+		return mShankCount;
+	}
+	
+	public void setShankCount(int shank){
+		mShankCount += shank;
+		
 	}
 }
