@@ -10,6 +10,7 @@ public class Scene {
 	public String resultC;
 	public String resultD;
 
+	// Constructor for scenes one through seven, which have a description and four choices each with their own result
 	public Scene(String description, String choiceA, String choiceB, String choiceC, 
 			String choiceD, String resultA, String resultB, String resultC, String resultD) {
 		this.description = description;
@@ -23,18 +24,8 @@ public class Scene {
 		this.resultD = resultD;
 	}
 	
-	public Scene(String description, String choiceA, String choiceB, String choiceC, String choiceD) {
+	// Constructor for scene eight, which has only a description
+	public Scene(String description) {
 		this.description = description;
-		this.choiceA = choiceA;
-		this.choiceB = choiceB;
-		this.choiceC = choiceC;
-		this.choiceD = choiceD;
-	}
-	public Scene(String description, String choiceA, String choiceB) {
-		this.description = description;
-		this.choiceA = choiceA;
-		this.choiceB = choiceB;
-		
 	}
 }
-

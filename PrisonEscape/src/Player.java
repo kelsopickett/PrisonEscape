@@ -5,7 +5,7 @@ public class Player {
 	// Declare and initialize constants
 	public static final int MAX_TOILET_WINE = 5;
 	public static final int MAX_SHANK = 1;
-	public static final int MAX_HEALTH = 500;
+	public static final int MAX_HEALTH = 200;
 	public static final int MAX_ATTACK_DAMAGE = 150;
 	// Declare player instance fields
 	private int mHealth;
@@ -18,8 +18,8 @@ public class Player {
 
 	// Declare, Define, and Overload Player constructor
 	public Player() {
-		mHealth = 350;
-		mAttackDamage = 50;
+		mHealth = 100;
+		mAttackDamage = 25;
 		mSmokes = 20;
 		mName = "You";
 		mAlive = true;
@@ -44,11 +44,18 @@ public class Player {
      */
 	public void toiletWine(int quantity){
 		Random rng = new Random();
-		int toiletWine = rng.nextInt(getHealth()) + 1;
-		
-		if (mHealth < MAX_HEALTH){
-		mHealth = mHealth + (toiletWine * quantity);
+		int toiletWine;
+		if (mHealth < 1){
+		return;
 		}
+		else{
+		toiletWine = rng.nextInt(mHealth) + 1;
+			mHealth = mHealth + (toiletWine * quantity);
+			if (mHealth > MAX_HEALTH) {
+				mHealth = MAX_HEALTH;
+			}
+		}
+		
 	}
 	
 	
@@ -64,14 +71,24 @@ public class Player {
 	 * 	during combat (where enemy attkdmg field is passed in)
 	 *  or after decision is made that alters health (passed random int)
 	 */	
+	public void refreshStats(Player p){
+		mHealth = 100;
+		mAttackDamage = 25;
+		mSmokes = 20;
+		mName = "You";
+		mAlive = true;
+		mWineCount = 0;
+		mShankCount = 0;
+	}
+	
 	public void setHealth(int injury) {
 		Random rng = new Random();
 		int trueInjury = rng.nextInt(injury);
 		mHealth = mHealth - trueInjury;
 			if (mHealth <= 0){
+				mHealth = 0;
 				mAlive = false;
 			}
-		
 	}
 	
 	public int getSmokes(){
@@ -89,7 +106,7 @@ public class Player {
 	
 	public void setAttackDamage(int quantity) {
 		
-		mAttackDamage += (10 * quantity);
+		mAttackDamage += (25 * quantity);
 				
 	}
 	
