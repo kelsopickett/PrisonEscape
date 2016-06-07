@@ -113,16 +113,16 @@ public class PrisonEscape {
 		+ " chute. You slide down, landing in a dumpster below.\n\nYou stand to find yourself outside in one of the exercise"
 		+ " yards. As you vault out of the dumpster, a guard shouts \"HALT OR I'LL OPEN FIRE!\".\n\nWhat do you do?", 
 		"Make a break for it.", "Scramble back up the rubbish chute.", "Bribe the guard with cigarettes.", "Surrender.", 
-		"You decide to ignore the guard and turn and run. Unfortunately the guard isn�t a malnourished prisoner, thus he is in great shape and"
+		"You decide to ignore the guard and turn and run. Unfortunately the guard isn't a malnourished prisoner, thus he is in great shape and"
 		+ " catches you with ease. You must defend yourself.", 
 		"You decide to scurry back up the garbage shoot, back the way you came. You turn around digging your fingernails into the metal chute as you"
 		+ " struggle to climb your way up. You make very little progress before being shot in the back 3 times. You lay there dying in the dumpster,"
 		+ " the guard deciding to leave you in the trash.", 
-		"Thinking quickly, you pull out a pack of cigarettes and offer them to the guard. The guard says �I should have you waterboarded for escaping"
-		+ " from your cell, but these are hard to come by, so I�ll look the other way this time.� �I�m going to walk the perimeter of the yard and I"
-		+ " expect you out of my sight by the time I get back!�. You know not to tempt fate again, so you run away as quick as you can.", 
-		"You decide that there is nowhere to go and that you have lost. You put your hands on your head and tell the guard that you surrender. The"
-		+ " guard puts handcuffs on you and takes you back to your cell.");
+		"Thinking quickly, you pull out a pack of cigarettes and offer them to the guard. The guard says “I should have you waterboarded for escaping"
+				+ " from your cell, but these are hard to come by, so I’ll look the other way this time.” “I’m going to walk the perimeter of the yard and I"
+				+ " expect you out of my sight by the time I get back!”. You know not to tempt fate again, so you run away as quick as you can.", 
+				"You decide that there is nowhere to go and that you have lost. You put your hands on your head and tell the guard that you surrender. The"
+				+ " guard puts handcuffs on you and takes you back to your cell.");
 	Scene infirmary = new Scene("You scramble toward and through the doors of the nearby infirmary, slamming them shut behind"
 			+ " you.\n\nAfter taking a moment to catch your breath, you turn and find yourself face to face with a nurse. He gives"
 			+ " you a puzzled look, \"You're in pretty bad shape. Let me help you.\"\n\nYou...", 
@@ -158,8 +158,8 @@ public class PrisonEscape {
 			+ " a nearby garage. You run over to the garage and climb inside, doing your best to completely submerge yourself within the ring of"
 			+ " tires. In the end your efforts were in vain, because the bus driver saw you running and hit the gas. The last thing you remember"
 			+ " is the loud crash of the bus colliding with the pile of tires as you are crushed beneath the weight of the bus.", 
-		"You assess the situation and realize that there is no way you�re getting out of this scenario alive. You want it to appear as if you are"
-			+ " cooperating, so you toss your knife onto the gravel in front of you. The bus driver doesn�t appear to notice the knife as he drives"
+		"You assess the situation and realize that there is no way you're getting out of this scenario alive. You want it to appear as if you are"
+			+ " cooperating, so you toss your knife onto the gravel in front of you. The bus driver doesn't appear to notice the knife as he drives"
 			+ " over it, popping a front tire in the process. The bus veers sharply and collides with the prison walls, the bus driver appears to be"
 			+ " dead or unconscious. Somehow you seem to be free, you make a run for the entry gate.");
 	Scene escape = new Scene("The gravel makes a satisfying sound beneath your feet as you walk out the gate. You take a deep"
@@ -719,7 +719,7 @@ public class PrisonEscape {
 					player.setSmokes(-player.getSmokes());
 					// Render result of choice when player has fewer than a whole pack of smokes
 					textArea.setText("Thinking quickly, you pull out a pack of cigarettes and offer them to the guard.\n\n\"This all you got? You gotta be"
-							+ " fuckin' kidding me, these won't last me an hour! I'm taking you back to your cell.\"");
+							+ " fuckin' kidding me, it ain't even a whole pack! I'm taking you back to your cell.\"");
 					//TODO We need a timer here so the user can read the result before returning to the first scene
 					// Reset scene counter
 					currentScene = 0;
@@ -858,7 +858,7 @@ public class PrisonEscape {
 					player.LiveorDead(false);
 					// Render result of choice
 					textArea.setText("You decide to throw your knife at the bus driver. It's a long shot, but you only have one chance.\n\nBut luck is not on"
-							+ " your side; the handle bounces off windshield. The warden doesn�t take kindly to having deadly objects thrown at him and runs you"
+							+ " your side; the handle bounces off windshield. The warden doesn't take kindly to having deadly objects thrown at him and runs you"
 							+ " down with ten tons of American-made steel retribution.");
 					stripActionListeners();
 					gameOver();
