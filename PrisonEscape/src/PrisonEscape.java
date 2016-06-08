@@ -3,20 +3,16 @@ import java.awt.EventQueue;
 import java.awt.Insets;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
-import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.Random;
 import java.awt.event.ActionEvent;
-import java.util.Random;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 import javax.swing.Timer;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
-
-import java.awt.Font;
 
 public class PrisonEscape {
 
@@ -389,9 +385,15 @@ public class PrisonEscape {
 
 		// Render first scene description in textArea, user options in buttons A-D, and update display of player stats
 		textArea.setText(gitmo[currentScene].description);
-		
 		updateStats();
 		updateChoices();
+
+		prisoner1.resetHealth(80);
+		yardGuard.resetHealth(100);
+		nurse.resetHealth(200);
+		prisoner1.LiveorDead(true);
+		yardGuard.LiveorDead(true);
+		nurse.LiveorDead(true);
 		
 		// user choice = option a: search the cell, find a shank and force door open
 		btnOptionA.addActionListener(new ActionListener() {
@@ -477,6 +479,8 @@ public class PrisonEscape {
 		// user choice = option b: stand and fight, combat ensues and user advances less health plus items
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.out.println(prisoner1.isAlive());
+				System.out.println(prisoner1.getHealth());
 				// Actualize player effects (COMBAT)
 				combat(player, prisoner1);
 				// If the player survives combat, proceed as usual; else, game over
@@ -953,11 +957,10 @@ public class PrisonEscape {
 	
 	protected void gameOver(){
 		// Update player stats
-		textGameOver.setText("Game Over");
-		textGameOver.setVisible(true);
 		updateStats();
 		// Make the "Game Over" message visible
-		
+		textGameOver.setText("Game Over");
+		textGameOver.setVisible(true);
 		// Update player choices (unlike previous scenes, these are unique to the Game Over scenario)
 		btnOptionA.setVisible(false);
 		btnOptionB.setText("Main Menu");
@@ -984,30 +987,24 @@ public class PrisonEscape {
     	btnOptionC.setText("Extras");
 		btnOptionD.setVisible(false);
 		currentScene = 0;
-		
-		textArea.setText("Welcome to Escape from Guantanamo Bay! Click new game to begin!!");
-		
+		textArea.setText("Welcome to Escape from Guantanamo Bay! Click \"New Game\" to begin.");	
 		// Create action listeners for these new choices
-				btnOptionB.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						
-						
-						
-						btnOptionA.setVisible(true);
-						btnOptionD.setVisible(true);
-						player.refreshStats(player);
-						stripLessAction();
-						
-						sceneOne();
-					}
-				});
-				btnOptionC.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						btnOptionA.setVisible(true);
-						stripLessAction();
-						extras();
-					}
-				}); 
+		btnOptionB.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnOptionA.setVisible(true);
+				btnOptionD.setVisible(true);
+				player.refreshStats(player);
+				stripLessAction();					
+				sceneOne();
+			}
+		});
+		btnOptionC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnOptionA.setVisible(true);
+				stripLessAction();
+				extras();
+			}
+		}); 
 	}
 	
 	protected void extras(){
@@ -1015,11 +1012,7 @@ public class PrisonEscape {
 		btnOptionA.setText("Main menu");
 		btnOptionB.setText("Statistics");
 		btnOptionC.setText("Credits");
-	
 		//btnOptionD.setVisible(false);
-		
-		
-		//TODO add a btnC that renders player stats
 		// Create action listeners for these new choices
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -1027,36 +1020,31 @@ public class PrisonEscape {
 				mainMenu();
 			}
 		});
-		
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripThreeAction();
 				statistics();
 			}
 		});
-		
 		btnOptionC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripThreeAction();
 				credits();
 			}
 		});
-		
 	}
 	
 	protected void credits(){
 		btnOptionA.setVisible(false);
 		btnOptionB.setText("Main Menu");
 		btnOptionC.setText("Extras");
-		textArea.setText("Brought to you by: Paul Jerome, Kelso Pickett, Brittany Mahoney, and Colby Pernela");
-		
+		textArea.setText("Brought to you by: Paul Jerome, Kelso Pickett, Brittany Mahoney, and Colby Pernela");	
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripLessAction();
 				mainMenu();
 			}
 		});
-		
 		btnOptionC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripLessAction();
@@ -1065,14 +1053,11 @@ public class PrisonEscape {
 		});
 	}
 	
-	protected void statistics(){
-		textArea.setText("You suck!! Proud of you!!");
-		
+	protected void statistics() {
 		btnOptionA.setVisible(false);
 		btnOptionB.setText("Main Menu");
 		btnOptionC.setText("Extras");
-		textArea.setText("Brought to you by: Paul Jerome, Kelso Pickett, Brittany Mahoney, and Colby Pernela");
-		
+		textArea.setText("Playtime stats go here");
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripLessAction();
