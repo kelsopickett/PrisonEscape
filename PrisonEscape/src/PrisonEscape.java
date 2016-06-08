@@ -380,21 +380,18 @@ public class PrisonEscape {
 		btnOptionC.removeActionListener(btnOptionC.getActionListeners()[0]);
 	}
 
-	
 	protected void sceneOne() {
-
 		// Render first scene description in textArea, user options in buttons A-D, and update display of player stats
 		textArea.setText(gitmo[currentScene].description);
 		updateStats();
 		updateChoices();
-
-		prisoner1.resetHealth(80);
-		yardGuard.resetHealth(100);
-		nurse.resetHealth(200);
+		// Reset health and alive status of NPCs to ensure combat encounters work on successful playthroughs
 		prisoner1.LiveorDead(true);
 		yardGuard.LiveorDead(true);
 		nurse.LiveorDead(true);
-		
+		prisoner1.resetHealth(80);
+		yardGuard.resetHealth(100);
+		nurse.resetHealth(200);
 		// user choice = option a: search the cell, find a shank and force door open
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -455,14 +452,12 @@ public class PrisonEscape {
 				sceneTwo();
 			}
 		});
-
 	}
 
 	protected void sceneTwo() {
 		// Update player stats and user choices for current scene
 		updateStats();
 		updateChoices();
-		
 		// user choice = option a: turn and flee, advancing them to the next scene sans consequence
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -969,8 +964,7 @@ public class PrisonEscape {
 		// Create action listeners for these new choices
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripLessAction();
-				
+				stripLessAction();	
 				mainMenu();
 			}
 		});
@@ -1007,12 +1001,16 @@ public class PrisonEscape {
 		}); 
 	}
 	
-	protected void extras(){
-		textArea.setText("What do you want?");
+	protected void extras() {
+		// Show the appropriate buttons
+		btnOptionA.setVisible(true);
+		btnOptionB.setVisible(true);
+		btnOptionC.setVisible(true);
+		//Set button and description text
+		textArea.setText("Please select an option from the choices below:");
 		btnOptionA.setText("Main menu");
 		btnOptionB.setText("Statistics");
-		btnOptionC.setText("Credits");
-		//btnOptionD.setVisible(false);
+		btnOptionC.setText("About");
 		// Create action listeners for these new choices
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -1029,16 +1027,24 @@ public class PrisonEscape {
 		btnOptionC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripThreeAction();
-				credits();
+				about();
 			}
 		});
 	}
 	
-	protected void credits(){
+	protected void about(){
+		// Show the appropriate buttons
 		btnOptionA.setVisible(false);
+		// Set button and description text
+		textArea.setText("Escape from Guantanamo Bay is a text-based adventure game in which you play as an unnamed protagonist. You have been imprisoned"
+				+ " and must fight for your life to escape during a prison riot. The plot advances based on, and responding to, player choice, offering"
+				+ " a unique experience with each playthrough.\n\nThis game was authored by Paul Jerome, Brittany Mahoney, Colby Pernela and Kelso Pickett"
+				+ " for Caleb Horst's Java Programming class (CS142) at Tacoma Community College in Spring 2016. Source revision history is available at"
+				+ " https://github.com/kelsopickett/PrisonEscape\n\nStory by: Paul Jerome, Brittany Mahoney,"
+				+ " Colby Pernela, Kelso Pickett\n\nScript by: Kelso Pickett\n\nCode by: Paul Jerome, Kelso Pickett\n\nAdditional Design by: Brittany Mahoney,"
+				+ " Colby Pernela");
 		btnOptionB.setText("Main Menu");
 		btnOptionC.setText("Extras");
-		textArea.setText("Brought to you by: Paul Jerome, Kelso Pickett, Brittany Mahoney, and Colby Pernela");	
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripLessAction();
