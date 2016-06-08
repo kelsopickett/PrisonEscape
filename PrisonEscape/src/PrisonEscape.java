@@ -39,6 +39,11 @@ public class PrisonEscape {
 	NonPlayerChar yardGuard = new NonPlayerChar(100, 50, "Leeloo", true); // Leeloo has full health and a taser (+25 DMG over 25 base DMG)
 	NonPlayerChar nurse = new NonPlayerChar(200, 25, "Kevorkian", true); // Kevorkian is overhealed, but fights with his fists at 25 base DMG)
 	NonPlayerChar warden = new NonPlayerChar();
+	// Declare tracked statistics
+	private int statPlaythroughs = 0;
+	private int statVictories = 0;
+	private int statHighscore = 0;
+	private int statCombats = 0;
 	
 	// Initialise scenes-- parameters: description,choiceA, choiceB, choiceC, choiceD, resultA, resultB, resultC, resultD
 	Scene cell = new Scene("You awake to find yourself in a dark cell.\n\nThe small, barred window above bathes you in a rich, warm light.\n\nThe light triggers"
@@ -392,6 +397,9 @@ public class PrisonEscape {
 		prisoner1.resetHealth(80);
 		yardGuard.resetHealth(100);
 		nurse.resetHealth(200);
+		// Increment stat counter(s)
+		statPlaythroughs ++;
+		statHighscore = player.getSmokes();
 		// user choice = option a: search the cell, find a shank and force door open
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -458,6 +466,8 @@ public class PrisonEscape {
 		// Update player stats and user choices for current scene
 		updateStats();
 		updateChoices();
+		// Increment stat counter(s)
+		statHighscore = player.getSmokes();
 		// user choice = option a: turn and flee, advancing them to the next scene sans consequence
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -474,10 +484,10 @@ public class PrisonEscape {
 		// user choice = option b: stand and fight, combat ensues and user advances less health plus items
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(prisoner1.isAlive());
-				System.out.println(prisoner1.getHealth());
 				// Actualize player effects (COMBAT)
 				combat(player, prisoner1);
+				// Increment stat counter(s)
+				statCombats ++;
 				// If the player survives combat, proceed as usual; else, game over
 				if (player.isAlive() == true) {
 					// Render result of choice and description of next scene
@@ -533,7 +543,8 @@ public class PrisonEscape {
 		// Update player stats and user choices for current scene
 		updateStats();
 		updateChoices();
-		
+		// Increment stat counter(s)
+		statHighscore = player.getSmokes();
 		// user choice = option a: take the prisoners by surprise, resulting in loss by death
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -596,7 +607,8 @@ public class PrisonEscape {
 		// Update player stats and user choices for current scene
 		updateStats();
 		updateChoices();
-		
+		// Increment stat counter(s)
+		statHighscore = player.getSmokes();
 		// user choice = option a: "I don't know"
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -660,12 +672,15 @@ public class PrisonEscape {
 		// Update user choices for current scene
 		updateStats();
 		updateChoices();
-		
+		// Increment stat counter(s)
+		statHighscore = player.getSmokes();
 		// user choice = option a: turn and run; combat, advance if alive
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Actualise player effects (COMBAT)
 				combat(player, yardGuard);
+				// Increment stat counter(s)
+				statCombats ++;
 				// If the player survives combat, proceed as usual; else, game over
 				if (player.isAlive() == true) {
 					// Render result of choice and description of next scene
@@ -756,7 +771,8 @@ public class PrisonEscape {
 		// Update user choices for current scene
 		updateStats();
 		updateChoices();
-		
+		// Increment stat counter(s)
+		statHighscore = player.getSmokes();
 		// user choice = option a: accept offer of help; something bad happens, loss
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -774,6 +790,8 @@ public class PrisonEscape {
 			public void actionPerformed(ActionEvent e) {
 				// Actualise player effects (COMBAT)
 				combat(player,nurse);
+				// Increment stat counter(s)
+				statCombats ++;
 				// If the player survives combat, proceed as usual; else, game over
 				if (player.isAlive() == true) {
 					// Render result of choice and description of next scene
@@ -834,7 +852,8 @@ public class PrisonEscape {
 		// Update user choices for current scene
 		updateStats();
 		updateChoices();
-		
+		// Increment stat counter(s)
+		statHighscore = player.getSmokes();
 		// user choice = option a: throw knife at bus driver; combat (really low chance of success), advance if alive
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -917,7 +936,9 @@ public class PrisonEscape {
 	protected void sceneEight() {
 		// Update player stats
 		updateStats();
-		// TODO Final scene
+		// Increment stat counter(s)
+		statVictories ++;
+		statHighscore = player.getSmokes();
 		// Make the "Game Over" message visible
 		textEscape.setVisible(true);
 		textEscape.setText("YOU HAVE ESCAPED");
@@ -1032,7 +1053,7 @@ public class PrisonEscape {
 		});
 	}
 	
-	protected void about(){
+	protected void about() {
 		// Show the appropriate buttons
 		btnOptionA.setVisible(false);
 		// Set button and description text
@@ -1063,15 +1084,16 @@ public class PrisonEscape {
 		btnOptionA.setVisible(false);
 		btnOptionB.setText("Main Menu");
 		btnOptionC.setText("Extras");
-		textArea.setText("Playtime stats go here");
+		textArea.setText("In this session you've...\n\n played " + statPlaythroughs + " times.\n\n won " + statVictories + " times.\n\n accumulated " + 
+		statHighscore + " cigarettes in a single playthrough.\n\n Entered combat " + statCombats + " times.\n\nYour success rate is " +
+				(((double)statVictories)/((double)statPlaythroughs)) + "%.");
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripLessAction();
 				btnOptionA.setVisible(true);
 				mainMenu();
 			}
-		});
-		
+		});	
 		btnOptionC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripLessAction();
