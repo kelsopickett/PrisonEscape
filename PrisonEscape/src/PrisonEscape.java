@@ -1030,8 +1030,8 @@ public class PrisonEscape {
 		//Set button and description text
 		textArea.setText("Please select an option from the choices below:");
 		btnOptionA.setText("Main menu");
-		btnOptionB.setText("Statistics");
-		btnOptionC.setText("About");
+		btnOptionB.setText("About");
+		btnOptionC.setText("Statistics");
 		// Create action listeners for these new choices
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -1042,13 +1042,13 @@ public class PrisonEscape {
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripThreeAction();
-				statistics();
+				about();
 			}
 		});
 		btnOptionC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripThreeAction();
-				about();
+				statistics();
 			}
 		});
 	}
