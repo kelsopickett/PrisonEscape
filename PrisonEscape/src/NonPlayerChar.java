@@ -76,6 +76,10 @@ public class NonPlayerChar {
 						}
 							
 				}
+				
+				public void resetHealth(int health) {
+					mHealth = health;
+				}
 
 				
 				//normal getters and mutators
