@@ -48,13 +48,13 @@ public class PrisonEscape {
 	// Initialise scenes-- parameters: description,choiceA, choiceB, choiceC, choiceD, resultA, resultB, resultC, resultD
 	Scene cell = new Scene("You awake to find yourself in a dark cell.\n\nThe small, barred window above bathes you in a rich, warm light.\n\nThe light triggers"
 				+ " a dull, throbbing pain in your head. You look down to discover you are covered in blood and bruises. Your body screams as you attempt to sit"
-				+ " upright. Your heart pounds in your ears. Your feet reach the floor, cold and damp seeping through the thin soles of your shoes into your"
+				+ " upright. Your heart pounds in your ears. Your feet reach the floor-- cold and damp, seeping through the thin soles of your shoes into your"
 				+ " bones.\n\nWhat do you do?", 
 		"Search cell for something useful.", "Make toilet wine.", "Crawl back in bed.", "Approach your cell door.", 
 		"The cell is sparse; not much to search through.\n\nYou rummage under the shit excuse for a mattress until something reopens a wound on your hand."
 				+ " Flipping the mattress over reveals a crudely made shank embedded inside. This might be useful... You rip it loose, tucking it in your"
 				+ " beltline. You rise to your feet, given pause by the dull aches throughout your body, and proceed to the cell door.\n\nPlacing your hands on"
-				+ " the bars, you find it loose in the frame. You press against the door with your remaining strength and force it open. You step wearily out"
+				+ " the bars, you find it loose in the frame. You press against the door with your remaining strength and force it open.\n\nYou step wearily out"
 				+ " into the cellblock.", 
 		"Another prisoner once taught you the best way to pass time was a kind of homemade wine made in cell toilets. Certainly not fit for a king, but you"
 				+ " aren't in much a position to complain. After a little work, you taste the fruits of your labor. It's bitter and burns on the way down, but"
@@ -67,35 +67,32 @@ public class PrisonEscape {
 		"You've had enough of this shithole. Anxious to make a move, you approach the cell door.\n\nPlacing your hands on the bars, you find it loose in the"
 				+ " frame. You press against the door with your remaining strength and force it open.\n\nYou step wearily out into the cellblock.");
 	Scene cellblock = new Scene("A sound to your right draws your attention, and you turn to find a fellow inmate brandishing a"
-			+ " shank.\n\nHow do you proceed?", 
+				+ " shank.\n\nHow do you proceed?", 
 		"Turn and flee.", "Stand and fight.", "Assume the fetal position.", "Attempt to talk your way out.", 
-		"You decide it's best not to take any chances.\n\nYou pivot away from the prisoner and sprint  toward the hallway at"
-			+ " the end of the cellblock. Your heart races as your feet pound the pavement, the sound echoing off the cement"
-			+ " walls.\n\nYou reach the gate at the end of the cellblock, slamming the lock shut behind you. You turn to face"
-			+ " the prisoner, who dons a frustrated sneer and before turning back the way he came.", 
+		"You decide it's best not to take any chances.\n\nYou pivot away from the prisoner and sprint toward the hallway at the end of the cellblock. Your heart"
+				+ " races as your feet pound the pavement, the sound echoing off the cement walls.\n\nYou reach the gate at the end of the block, slamming"
+				+ " the lock shut behind you. You turn to face the prisoner, who dons a frustrated sneer before turning back the way he came.", 
 		"\"Let's dance\" you mutter, gesturing the prisoner to approach. He lunges at you and a fight ensues.", 
-		"You are not prepared for this fight. Realising the futility of your situation, you collapse to the floor and curl"
-			+ " up into the fetal position. You hear the prisoner laugh as the sound of his footsteps grow closer.\n\nYou feel"
-			+ " a blade plunge into your side repeatedly and the world fades to black.", 
+		"You are not prepared for this fight. Realising the futility of your situation, you collapse to the floor and curl up into the fetal position. You hear"
+				+ " the prisoner laugh as the sound of his footsteps grow closer.\n\nYou feel a blade plunge into your side repeatedly and the world fades to"
+				+ " black.", 
 		"\"I just want to get out of here\" you plead. He responds, \"You and me both. That way is a shit show,\"  gesturing"
-			+ " behind him.\n\n\"Alright. Thanks. Guess I'll check down that hall,\" you suggest, point to the hallway at the opposite"
-			+ " end of the cellblock. He replies, \"Suit yourself, I'm out of here,\" before wandering to the upper levels of the block."
-			+ " His footsteps fade into the distance of one of the hallways above.");
-	Scene cafeteria = new Scene("You move down the cellblock into a narrow corridor. You approach a junction and follow"
-			+ " signs toward the cafeteria. You peer through the reinforced glass of the cafeteria doors-- there is"
-			+ " a group of armed prisoners at the far end of the cafeteria. None of them appear to be facing you."
-			+ " What's your next move?", 
+				+ " behind him.\n\n\"Alright. Thanks. Guess I'll check down that hall,\" you suggest, pointing to the hallway at the opposite end of the block."
+				+ " He replies, \"Suit yourself, I'm out of here,\" before wandering to the upper levels of the block.\n\nHis footsteps fade into the distance of"
+				+ " one of the hallways above.");
+	Scene cafeteria = new Scene("After entering the corridor, you arrive at the first junction and follow signs toward the cafeteria.\n\nYou reach the cafeteria"
+				+ " doors and peer through the reinforced glass-- there is a group of armed prisoners at the far end of the cafeteria. None of them appear to be"
+				+ " facing you.\n\nWhat's your next move?", 
 		"Take the prisoners by surprise.", "Sneak to the kitchen.", "Hide in the corridor.", "Backtrack down the corridor.", 
-		"You decide it's best to use the element of surprise to your advantage.\n\nWith their backs turned, you approach the group"
-			+ " of prisoners without a sound and ambush them.\n\nHowever, they outnumber you significantly, and your wounds have"
-			+ " weakened you. You are slain in combat.", 
-		"You decide it's best to leave this group alone.\n\nYou slip into the cafeteria and creep silently toward the kitchen door.", 
-		"You decide not to reveal your presence to the prisoners.\n\nAs you take cover in a nearby doorway, you hear footsteps"
-			+ " approaching the cateferia doors. They swing open and the prisoners emerge. The first through the door immediately spots you."
-			+ "\n\nYou attempt to flee, but it's futile-- they are too great in number. The last thing you see are boots stomping your face.", 
-		"You decide not to reveal your presence to the prisoners.\n\nBacktracking down the corridor, you encounter a guard who orders"
-			+ " you to halt. You offer him all your cigarettes in exhchange for safe passage through the cafeteria.\n\nHe leads the way back,"
-			+ " swinging the cafeteria doors open and opening fire on the rioting prisoners as they scatter.");
+		"You decide it's best to use the element of surprise to your advantage.\n\nWith their backs turned, you approach the group without a sound and ambush"
+				+ " them.\n\nHowever, they outnumber you significantly, and your wounds have weakened you. You are slain in combat.", 
+		"You decide this group is best left alone.\n\nYou slip into the cafeteria and creep silently toward the kitchen door.", 
+		"You decide not to reveal your presence to the prisoners.\n\nAs you take cover in a nearby doorway, you hear footsteps approaching the cateferia doors."
+				+ " They swing open and the prisoners emerge. The first through the door immediately spots you.\n\nYou attempt to flee, but it's futile-- they"
+				+ " are too great in number. The last thing you see are boots stomping your face.", 
+		"You decide not to reveal your presence to the prisoners.\n\nBacktracking down the corridor, you encounter a guard who orders you to halt. You offer him"
+				+ " a pack of cigarettes in exhchange for safe passage through the cafeteria.\n\nHe leads the way back, swinging the cafeteria doors open and"
+				+ " opening fire on the rioting prisoners as they scatter.");
 	Scene kitchen = new Scene("Keeping an eye on the cafeteria, you press your back to the swinging doors into the kitchen.\n\n"
 			+ "As you cross the threshold, a hand grabs you from behind, with another pressing a knife to your throat. You hear"
 			+ " the cook's distinctive chuckle as he recognises you and lets you go.\n\n\"Alright... you're good people. I'll let you go if"
