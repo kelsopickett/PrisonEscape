@@ -93,33 +93,37 @@ public class PrisonEscape {
 		"You decide not to reveal your presence to the prisoners.\n\nBacktracking down the corridor, you encounter a guard who orders you to halt. You offer him"
 				+ " a pack of cigarettes in exhchange for safe passage through the cafeteria.\n\nHe leads the way back, swinging the cafeteria doors open and"
 				+ " opening fire on the rioting prisoners as they scatter.");
-	Scene kitchen = new Scene("Keeping an eye on the cafeteria, you press your back to the swinging doors into the kitchen.\n\n"
-			+ "As you cross the threshold, a hand grabs you from behind, with another pressing a knife to your throat. You hear"
-			+ " the cook's distinctive chuckle as he recognises you and lets you go.\n\n\"Alright... you're good people. I'll let you go if"
-			+ " you can answer this riddle... Poor people have it, rich people need it, but if you eat it, you die.\"\n\nWhat is it?", 
+	Scene kitchen = new Scene("Keeping an eye on the cafeteria, you press your back to the swinging doors into the kitchen.\n\nAs you cross the threshold, a hand"
+				+ " grabs you from behind, with another pressing a knife to your throat. You hear the cook's distinctive chuckle as he recognises you and lets"
+				+ " you go.\n\n\"Alright... you're good people. I'll let you go if you can answer this riddle... Poor people have it, rich people need it, but if"
+				+ " you eat it, you die.\"\n\nWhat is it?", 
 		"\"I don't know.\"", "\"I AM THE 1%!\"", "\"Just let me go.\"", "\"Nothing.\"", 
-		"You answer, \"What kind of fucking riddle is that? I don't know.\"\n\n\"Then I guess you don't get to live,\" he replies, advancing toward you. You try "
-				+ "to stop him, but are no match for the rotund man. He overpowers you, raising his knife overhead and plunging it into your neck.", 
-		"You exclaim, \"I AM the 1%!\".\n\n\"I shoulda known you was one of them spoiled bitches. That'll make this all the sweeter,\" he quips. You stumble"
+		"You answer, \"What kind of fucking riddle is that? I don't know, man.\"\n\n\"Then I guess you don't get to live,\" he replies, advancing toward you.\n\n"
+				+ "You try to stop him, but are no match for the rotund man. He overpowers you, raising his knife overhead and plunging it into your neck.", 
+		"You exclaim, \"I AM the 1%!\".\n\n\"I shoulda known you was one of them spoiled bitches. That'll make this all the sweeter,\" he quips.\n\nYou stumble"
 				+ " backward, trying to put some distance between the two of you. The cook plants both feet, draws his arm back and takes aim, tossing the knife"
 				+ " squarely between your eyes.", 
-		"You plead, \"Just let me go.\"\n\nHe pauses, and with an obvious look of disapproval on his face, utters, \"I can't let you do that, Dave.\" He steps"
+		"You plead, \"Just let me go.\"\n\nHe pauses, and with an obvious look of disapproval on his face, utters, \"I can't let you do that, Dave.\"\n\nHe steps"
 				+ " foward, arms outstreched, and embraces you. Confused, you hug him back.\n\nYou feel cold steel plunge into your body between the shoulder"
 				+ " blades as he whispers, \"I'm sorry...\" as your lifeless body slumps to the ground.", 
-		"A smile crosses his face. \"Hell yeah!\" he exclaims, his contagious laughter filling the room. \"I knew you was clever.\"");
-	Scene yard = new Scene("Your answer satisfies the cook.\n\nHe ushers you toward the corner of the room and into the rubbish"
-		+ " chute. You slide down, landing in a dumpster below.\n\nYou stand to find yourself outside in one of the exercise"
-		+ " yards. As you vault out of the dumpster, a guard shouts \"HALT OR I'LL OPEN FIRE!\".\n\nWhat do you do?", 
+		"A smile crosses his face. \"Hell yeah!\" he exclaims, his contagious laughter filling the room. \"You always were too clever for your own good.\"");
+	Scene yard = new Scene("Your answer satisfies the cook.\n\nHe ushers you toward the back of the room and into the rubbish chute. You slide down, landing"
+				+ " in a dumpster below.\n\nYou stand to find yourself outside in one of the exercise yards.\n\nAs you vault out of the dumpster, a guard shouts"
+				+ " \"HALT OR I WILL FUCKING TASE YOU!\".\n\nWhat do you do?", 
 		"Make a break for it.", "Scramble back up the rubbish chute.", "Bribe the guard with cigarettes.", "Surrender.", 
-		"You decide to ignore the guard and turn and run. Unfortunately the guard isn't a malnourished prisoner, thus he is in great shape and"
-		+ " catches you with ease. You must defend yourself.", 
-		"You decide to scurry back up the garbage shoot, back the way you came. You turn around digging your fingernails into the metal chute as you"
-		+ " struggle to climb your way up. You make very little progress before being shot in the back 3 times. You lay there dying in the dumpster,"
-		+ " the guard deciding to leave you in the trash.", 
-		"Thinking quickly, you pull out a pack of cigarettes and offer them to the guard. The guard says “I should have you waterboarded for escaping"
-				+ " from your cell, but these are hard to come by, so I’ll look the other way this time.” “I’m going to walk the perimeter of the yard and I"
-				+ " expect you out of my sight by the time I get back!”. You know not to tempt fate again, so you run away as quick as you can.", 
-				"You decide that there is nowhere to go and that you have lost. You put your hands on your head and tell the guard that you surrender. The"
+		"You decide to ignore the guard and make a break for it.\n\nUnfortunately, the guard is in much better condition than a malnourished prisoner like you."
+				+ " He catches you with relative ease and grabs you by the collar. You kick him and he stumbles backward, then draws his Taser from its holster."
+				+ "\n\nYou must defend yourself.", 
+		"You decide to scurry back up the garbage shoot, back the way you came.\n\nYou turn around, digging your fingernails into the grimy metal chute as you"
+				+ " struggle to ascend.\n\nThe distinctive sound of a Taser rings out behind you, its probes planting in the small of your back. The electrical"
+				+ " current flows through you, your body seizing and sliding down the chute into the dumpster below.\n\n You lay there, paralysed as the officer"
+				+ " stands over you. You watch in horror as he removes his firearm from its holster, discharging three shots into your chest.\n\nHe puts on his"
+				+ " aviators, and in true David Caruso fashion, mutters, \"Guess I'll leave this one to go out with the trash.\"", 
+		"Thinking quickly, you pull out a pack of cigarettes and offer them to the guard.\n\nHe smiles, “I should have you waterboarded for escaping from"
+				+ " your cell... but these are hard to come by, so I’ll look the other way this time.\"\n\n\"I’m going to walk the perimeter of the yard. If"
+				+ " you're still here when I get back, I'll be taking a hell of a lot more than your shitty smokes.\"\n\nYou know better than to tempt fate"
+				+ " again, and make like hell out of the yard.", 
+		"You decide that there is nowhere to go and that you have lost. You put your hands on your head and tell the guard that you surrender. The"
 				+ " guard puts handcuffs on you and takes you back to your cell.");
 	Scene infirmary = new Scene("You scramble toward and through the doors of the nearby infirmary, slamming them shut behind"
 			+ " you.\n\nAfter taking a moment to catch your breath, you turn and find yourself face to face with a nurse. He gives"
@@ -1081,9 +1085,17 @@ public class PrisonEscape {
 		btnOptionA.setVisible(false);
 		btnOptionB.setText("Main Menu");
 		btnOptionC.setText("Extras");
-		textArea.setText("In this session you've...\n\n played " + statPlaythroughs + " times.\n\n won " + statVictories + " times.\n\n accumulated " + 
-		statHighscore + " cigarettes in a single playthrough.\n\n Entered combat " + statCombats + " times.\n\nYour success rate is " +
-				(((double)statVictories)/((double)statPlaythroughs)) + "%.");
+		if (statPlaythroughs < 1) {
+			textArea.setText("In this session you've:\n\n ... played " + statPlaythroughs + " times.\n\n ... won " + statVictories + " times.\n\n ... accumulated "
+					+ statHighscore + " cigrettes in a single playthrough.\n\n ... entered combat " + statCombats + " times.\n\nYour success rate can't be calculated"
+					+ " because you haven't yet played!");
+		}
+		else {
+			textArea.setText("In this session you've:\n\n ... played " + statPlaythroughs + " times.\n\n ... won " + statVictories + " times.\n\n ... accumulated " 
+					+ statHighscore + " cigrettes in a single playthrough.\n\n ... entered combat " + statCombats + " times.\n\nYour success rate is " +
+					(((double)statVictories)/((double)statPlaythroughs)) + "%.");
+		}
+		
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripLessAction();
