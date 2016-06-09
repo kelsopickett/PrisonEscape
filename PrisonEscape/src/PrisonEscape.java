@@ -20,17 +20,9 @@ public class PrisonEscape {
 	Random rng = new Random();
 	private JFrame frame;
 	private static JTextArea textArea;
-	private JTextField textHealth;
-	private JTextField textSmokes;
-	private JTextField textWine;
-	private JTextField textShanks;
-	private JTextField textDamage;
-	private JTextPane textGameOver;
-	private JTextPane textEscape;
-	private JButton btnOptionA;
-	private JButton btnOptionB;
-	private JButton btnOptionC;
-	private JButton btnOptionD;
+	private JTextField textHealth, textSmokes, textWine, textShanks, textDamage;
+	private JTextPane textGameOver, textEscape;
+	private JButton btnOptionA, btnOptionB, btnOptionC, btnOptionD;
 	//Declare class variables
 	private static int currentScene = 0;
 	// Instantiate player and enemies
@@ -40,10 +32,7 @@ public class PrisonEscape {
 	NonPlayerChar nurse = new NonPlayerChar(200, 25, "Kevorkian", true); // Kevorkian is overhealed, but fights with his fists at 25 base DMG)
 	NonPlayerChar warden = new NonPlayerChar();
 	// Declare tracked statistics
-	private int statPlaythroughs = 0;
-	private int statVictories = 0;
-	private int statHighscore = 0;
-	private int statCombats = 0;
+	private int statPlaythroughs = 0, statVictories = 0, statHighscore = 0, statCombats = 0;
 	// Initialise scenes-- parameters: description,choiceA, choiceB, choiceC, choiceD, resultA, resultB, resultC, resultD
 	Scene cell = new Scene("You awake to find yourself in a dark cell.\n\nThe small, barred window above bathes you in a rich, warm light.\n\nThe light triggers"
 				+ " a dull, throbbing pain in your head. You look down to discover you are covered in blood and bruises. Your body screams as you attempt to sit"
