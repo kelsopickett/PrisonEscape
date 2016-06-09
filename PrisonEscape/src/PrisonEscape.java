@@ -1068,12 +1068,16 @@ public class PrisonEscape {
 	protected void extras() {
 		// Set appropriate button visibility
 		buttonVisibility(1,1,0,1);
-		//Set button and description text
-		textArea.setText("Please select an option from the choices below:");
+		//Set description and button text
+		textArea.setText("Escape from Guantanamo Bay is a text-based adventure game in which you have been imprisoned and must fight for your life to escape"
+				+ " during a prisoner uprising. The plot advances based on, and responding to, player choice, offering a unique experience with each playthrough."
+				+ "\n\nCharacter information (shown at the top of the screen) is updated with each choice you make during the story.\n  Finding a shank"
+				+ " will increase your attack damage by 25\n  Finding or crafting toilet wine will increase your health\n  Escape with as many smokes as possible"
+				+ " to set a new high score");
 		btnOptionA.setText("About");
 		btnOptionB.setText("Statistics");
 		btnOptionD.setText("Back to Main menu");
-		// Create action listeners for these new choices
+		// Set button actions
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripSpecificActionListeners(1,1,0,1);
@@ -1098,9 +1102,7 @@ public class PrisonEscape {
 		// Set appropriate button visibility
 		buttonVisibility(0,1,1,0);
 		// Set button and description text
-		textArea.setText("Escape from Guantanamo Bay is a text-based adventure game in which you play as an unnamed protagonist. You have been imprisoned"
-				+ " and must fight for your life to escape during a prison riot. The plot advances based on, and responding to, player choice, offering"
-				+ " a unique experience with each playthrough.\n\nThis game was authored by Paul Jerome, Brittany Mahoney, Colby Pernela and Kelso Pickett"
+		textArea.setText("This game was authored by Paul Jerome, Brittany Mahoney, Colby Pernela and Kelso Pickett"
 				+ " for Caleb Horst's Java Programming class (CS142) at Tacoma Community College in Spring 2016. Source revision history is available at"
 				+ " https://github.com/kelsopickett/PrisonEscape\n\nStory by: Paul Jerome, Brittany Mahoney,"
 				+ " Colby Pernela, Kelso Pickett\n\nScript by: Kelso Pickett\n\nCode by: Paul Jerome, Kelso Pickett\n\nAdditional Design by: Brittany Mahoney,"
