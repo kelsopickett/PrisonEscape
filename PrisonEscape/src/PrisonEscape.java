@@ -375,6 +375,29 @@ public class PrisonEscape {
 		btnOptionD.removeActionListener(btnOptionD.getActionListeners()[0]);
 	}
 	
+	/**
+	 * This method removes the action listeners for the buttons specified in the parameters:
+	 * parameter: int a -- if passed a '1', will strip the action listener for btnA
+	 * parameter: int b -- if passed a '1', will strip the action listener for btnB
+	 * parameter: int c -- if passed a '1', will strip the action listener for btnC
+	 * parameter: int d -- if passed a '1', will strip the action listener for btnD
+	 */
+	private void stripSpecificActionListeners(int a, int b, int c, int d) {
+		if (a == 1) {
+			btnOptionA.removeActionListener(btnOptionA.getActionListeners()[0]);
+		}
+		if (b == 1) {
+			btnOptionB.removeActionListener(btnOptionB.getActionListeners()[0]);
+		}
+		if (c == 1) {
+			btnOptionC.removeActionListener(btnOptionC.getActionListeners()[0]);
+		}
+		if (d == 1) {
+			btnOptionD.removeActionListener(btnOptionD.getActionListeners()[0]);
+		}
+	}
+	
+	
 	private void stripLessAction(){
 		btnOptionB.removeActionListener(btnOptionB.getActionListeners()[0]);
 		btnOptionC.removeActionListener(btnOptionC.getActionListeners()[0]);
@@ -1098,14 +1121,14 @@ public class PrisonEscape {
 		
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripLessAction();
+				stripSpecificActionListeners(0,1,1,0);
 				btnOptionA.setVisible(true);
 				mainMenu();
 			}
 		});	
 		btnOptionC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripLessAction();
+				stripSpecificActionListeners(0,1,1,0);
 				btnOptionA.setVisible(true);
 				extras();
 			}
