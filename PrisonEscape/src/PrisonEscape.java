@@ -36,7 +36,7 @@ public class PrisonEscape {
 	// Instantiate player and enemies
 	Player player = new Player();
 	NonPlayerChar prisoner1 = new NonPlayerChar(80, 40, "Geralt", true); // Geralt has partial health and a shank (+15 DMG over 25 base DMG)
-	NonPlayerChar yardGuard = new NonPlayerChar(100, 50, "Leeloo", true); // Leeloo has full health and a taser (+25 DMG over 25 base DMG)
+	NonPlayerChar yardGuard = new NonPlayerChar(100, 50, "Leeloo", true); // Leeloo has full health and a Taser (+25 DMG over 25 base DMG)
 	NonPlayerChar nurse = new NonPlayerChar(200, 25, "Kevorkian", true); // Kevorkian is overhealed, but fights with his fists at 25 base DMG)
 	NonPlayerChar warden = new NonPlayerChar();
 	// Declare tracked statistics
@@ -44,7 +44,6 @@ public class PrisonEscape {
 	private int statVictories = 0;
 	private int statHighscore = 0;
 	private int statCombats = 0;
-	
 	// Initialise scenes-- parameters: description,choiceA, choiceB, choiceC, choiceD, resultA, resultB, resultC, resultD
 	Scene cell = new Scene("You awake to find yourself in a dark cell.\n\nThe small, barred window above bathes you in a rich, warm light.\n\nThe light triggers"
 				+ " a dull, throbbing pain in your head. You look down to discover you are covered in blood and bruises. Your body screams as you attempt to sit"
@@ -166,9 +165,8 @@ public class PrisonEscape {
 			+ " dead or unconscious. Somehow you seem to be free, you make a run for the entry gate.");
 	Scene escape = new Scene("The gravel makes a satisfying sound beneath your feet as you walk out the gate. You take a deep"
 		+ " breath of fresh, Cuban air and a moment to revel in the sunset. You are free.");
-	
 	// Initialise array of scenes
-	private Scene[] gitmo = {cell, cellblock, cafeteria, kitchen, yard, infirmary, entrance, escape};	
+	private Scene[] gitmo = {cell, cellblock, cafeteria, kitchen, yard, infirmary, entrance, escape};
 
 	/**
 	 * Launch the application.
@@ -179,6 +177,7 @@ public class PrisonEscape {
 				try {
 					PrisonEscape window = new PrisonEscape();
 					window.frame.setVisible(true);
+					// Open the main menu
 					window.mainMenu();
 				} catch (Exception e) {
 					e.printStackTrace();
