@@ -239,6 +239,7 @@ public class PrisonEscape {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		// textArea displays the narrative elements of the game
 		textArea = new JTextArea();
 		textArea.setWrapStyleWord(true);
 		textArea.setLineWrap(true);
@@ -247,6 +248,7 @@ public class PrisonEscape {
 		textArea.setMargin(new Insets(10,10,10,10));
 		frame.getContentPane().add(textArea);
 		
+		//btnOptionA-D are for displaying user options and receiving input
 		btnOptionA = new JButton("Option A");
 		btnOptionA.setBounds(20, 380, 600, 30);
 		frame.getContentPane().add(btnOptionA);
@@ -263,6 +265,7 @@ public class PrisonEscape {
 		btnOptionD.setBounds(20, 470, 600, 30);
 		frame.getContentPane().add(btnOptionD);
 		
+		// JLabels and corresponding JTextFields display player information (healthy, attack damage, etc)
 		JLabel lblHealth = new JLabel("Health:");
 		lblHealth.setBounds(20, 20, 61, 16);
 		frame.getContentPane().add(lblHealth);
@@ -313,6 +316,7 @@ public class PrisonEscape {
 		frame.getContentPane().add(textShanks);
 		textShanks.setColumns(10);
 		
+		// These two JTextPanes are displayed to the user upon "GAME OVER" or "VICTORY" conditions
 		textGameOver = new JTextPane();
 		textGameOver.setEditable(false);
 		textGameOver.setBounds(220, 170, 200, 60);
