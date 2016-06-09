@@ -1071,12 +1071,12 @@ public class PrisonEscape {
 		//Set description and button text
 		textArea.setText("Escape from Guantanamo Bay is a text-based adventure game in which you have been imprisoned and must fight for your life to escape"
 				+ " during a prisoner uprising. The plot advances based on, and responding to, player choice, offering a unique experience with each playthrough."
-				+ "\n\nCharacter information (shown at the top of the screen) is updated with each choice you make during the story.\n  Finding a shank"
+				+ "\n\nCharacter information (shown across the top of the window) is updated with each choice you make during the story.\n  Finding a shank"
 				+ " will increase your attack damage by 25\n  Finding or crafting toilet wine will increase your health\n  Escape with as many smokes as possible"
 				+ " to set a new high score");
 		btnOptionA.setText("About");
 		btnOptionB.setText("Statistics");
-		btnOptionD.setText("Back to Main menu");
+		btnOptionD.setText("Back to Main Menu");
 		// Set button actions
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -1100,25 +1100,27 @@ public class PrisonEscape {
 	
 	protected void about() {
 		// Set appropriate button visibility
-		buttonVisibility(0,1,1,0);
+		buttonVisibility(1,0,0,1);
 		// Set button and description text
-		textArea.setText("This game was authored by Paul Jerome, Brittany Mahoney, Colby Pernela and Kelso Pickett"
-				+ " for Caleb Horst's Java Programming class (CS142) at Tacoma Community College in Spring 2016. Source revision history is available at"
-				+ " https://github.com/kelsopickett/PrisonEscape\n\nStory by: Paul Jerome, Brittany Mahoney,"
-				+ " Colby Pernela, Kelso Pickett\n\nScript by: Kelso Pickett\n\nCode by: Paul Jerome, Kelso Pickett\n\nAdditional Design by: Brittany Mahoney,"
-				+ " Colby Pernela");
-		btnOptionB.setText("Main Menu");
-		btnOptionC.setText("Extras");
-		btnOptionB.addActionListener(new ActionListener() {
+		textArea.setText("This game was authored by Paul Jerome, Brittany Mahoney, Colby Pernela and Kelso Pickett for Caleb Horst's Java Programming class"
+				+ " (CS142) at Tacoma Community College in Spring 2016."
+				+ "\n\nSource and revision history are available at https://github.com/kelsopickett/PrisonEscape"
+				+ "\n\nStory by: Paul Jerome, Brittany Mahoney, Colby Pernela, Kelso Pickett"
+				+ "\n\nScript by: Kelso Pickett"
+				+ "\n\nCode by: Paul Jerome, Kelso Pickett"
+				+ "\n\nAdditional Design by: Brittany Mahoney, Colby Pernela");
+		btnOptionA.setText("Back to Extras");
+		btnOptionD.setText("Back to Main Menu");
+		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(0,1,1,0);
-				mainMenu();
+				stripSpecificActionListeners(1,0,0,1);
+				extras();
 			}
 		});
-		btnOptionC.addActionListener(new ActionListener() {
+		btnOptionD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(0,1,1,0);
-				extras();
+				stripSpecificActionListeners(1,0,0,1);
+				mainMenu();
 			}
 		});
 	}
