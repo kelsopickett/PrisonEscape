@@ -396,12 +396,41 @@ public class PrisonEscape {
 			btnOptionD.removeActionListener(btnOptionD.getActionListeners()[0]);
 		}
 	}
+	
+	private void buttonVisibility(int a, int b, int c, int d) {
+		if (a == 0) {
+			btnOptionA.setVisible(false);
+		}
+		else if (a == 1) {
+			btnOptionA.setVisible(true);
+		}
+		if (b == 0) {
+			btnOptionB.setVisible(false);
+		}
+		else if (b == 1) {
+			btnOptionB.setVisible(true);
+		}
+		if (c == 0) {
+			btnOptionC.setVisible(false);
+		}
+		else if (c == 1) {
+			btnOptionC.setVisible(true);
+		}
+		if (d == 0) {
+			btnOptionD.setVisible(false);
+		}
+		else if (d == 1) {
+			btnOptionD.setVisible(true);
+		}
+	}
 
 	protected void sceneOne() {
 		// Render first scene description in textArea, user options in buttons A-D, and update display of player stats
 		textArea.setText(gitmo[currentScene].description);
 		updateStats();
 		updateChoices();
+		// Ensure buttons are visible
+		buttonVisibility(1,1,1,1);
 		// Reset health and alive status of NPCs to ensure combat encounters work on successful playthroughs
 		prisoner1.LiveorDead(true);
 		yardGuard.LiveorDead(true);
@@ -948,6 +977,8 @@ public class PrisonEscape {
 	protected void sceneEight() {
 		// Update player stats
 		updateStats();
+		// Set appropriate button visibility
+		buttonVisibility(1,0,1,1);
 		// Increment stat counter(s)
 		statVictories ++;
 		statHighscore = player.getSmokes();
@@ -956,7 +987,6 @@ public class PrisonEscape {
 		textEscape.setText("YOU HAVE ESCAPED");
 		// Update player choices (unlike previous scenes, these are unique to the Game Over scenario)
 		btnOptionA.setText("New Game+");
-		btnOptionB.setVisible(false);
 		btnOptionC.setText("Main Menu");
 		btnOptionD.setText("Quit");
 		// Create action listeners for these new choices
@@ -964,19 +994,17 @@ public class PrisonEscape {
 			public void actionPerformed(ActionEvent e) {
 				// Reset scene counter
 				currentScene = 0;
-				// Restore visibility of fourth button
-				btnOptionD.setVisible(true);
-				stripSpecificActionListeners(1,1,1,0);
+				stripSpecificActionListeners(1,0,1,1);
 				sceneOne();
 			}
 		});
-		btnOptionB.addActionListener(new ActionListener() {
+		btnOptionC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(1,1,1,0);
+				stripSpecificActionListeners(1,0,1,1);
 				mainMenu();
 			}
 		});
-		btnOptionC.addActionListener(new ActionListener() {
+		btnOptionD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
@@ -989,11 +1017,11 @@ public class PrisonEscape {
 		// Make the "Game Over" message visible
 		textGameOver.setText("Game Over");
 		textGameOver.setVisible(true);
+		// Set appropriate button visibility
+		buttonVisibility(0,1,1,0);
 		// Update player choices (unlike previous scenes, these are unique to the Game Over scenario)
-		btnOptionA.setVisible(false);
 		btnOptionB.setText("Main Menu");
 		btnOptionC.setText("Quit");
-		btnOptionD.setVisible(false);
 		// Create action listeners for these new choices
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -1009,17 +1037,15 @@ public class PrisonEscape {
 	}
 	
 	protected void mainMenu(){
-		btnOptionA.setVisible(false);
+		// Set appropriate button visibility
+		buttonVisibility(0,1,1,0);
 	    btnOptionB.setText("New Game");
     	btnOptionC.setText("Extras");
-		btnOptionD.setVisible(false);
 		currentScene = 0;
 		textArea.setText("Welcome to Escape from Guantanamo Bay! Click \"New Game\" to begin.");	
 		// Create action listeners for these new choices
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnOptionA.setVisible(true);
-				btnOptionD.setVisible(true);
 				player.refreshStats(player);
 				stripSpecificActionListeners(0,1,1,0);
 				sceneOne();
@@ -1027,7 +1053,6 @@ public class PrisonEscape {
 		});
 		btnOptionC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnOptionA.setVisible(true);
 				stripSpecificActionListeners(0,1,1,0);
 				extras();
 			}
@@ -1035,10 +1060,8 @@ public class PrisonEscape {
 	}
 	
 	protected void extras() {
-		// Show the appropriate buttons
-		btnOptionA.setVisible(true);
-		btnOptionB.setVisible(true);
-		btnOptionC.setVisible(true);
+		// Set appropriate button visibility
+		buttonVisibility(1,1,1,0);
 		//Set button and description text
 		textArea.setText("Please select an option from the choices below:");
 		btnOptionA.setText("Main menu");
@@ -1066,8 +1089,8 @@ public class PrisonEscape {
 	}
 	
 	protected void about() {
-		// Show the appropriate buttons
-		btnOptionA.setVisible(false);
+		// Set appropriate button visibility
+		buttonVisibility(0,1,1,0);
 		// Set button and description text
 		textArea.setText("Escape from Guantanamo Bay is a text-based adventure game in which you play as an unnamed protagonist. You have been imprisoned"
 				+ " and must fight for your life to escape during a prison riot. The plot advances based on, and responding to, player choice, offering"
@@ -1093,7 +1116,8 @@ public class PrisonEscape {
 	}
 	
 	protected void statistics() {
-		btnOptionA.setVisible(false);
+		// Set appropriate button visibility
+		buttonVisibility(0,1,1,0);
 		btnOptionB.setText("Main Menu");
 		btnOptionC.setText("Extras");
 		if (statPlaythroughs < 1) {
@@ -1110,14 +1134,12 @@ public class PrisonEscape {
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripSpecificActionListeners(0,1,1,0);
-				btnOptionA.setVisible(true);
 				mainMenu();
 			}
 		});	
 		btnOptionC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				stripSpecificActionListeners(0,1,1,0);
-				btnOptionA.setVisible(true);
 				extras();
 			}
 		});
