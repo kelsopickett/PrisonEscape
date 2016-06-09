@@ -1093,7 +1093,7 @@ public class PrisonEscape {
 		else {
 			textArea.setText("In this session you've:\n\n ... played " + statPlaythroughs + " times.\n\n ... won " + statVictories + " times.\n\n ... accumulated " 
 					+ statHighscore + " cigrettes in a single playthrough.\n\n ... entered combat " + statCombats + " times.\n\nYour success rate is " +
-					(((double)statVictories)/((double)statPlaythroughs)) + "%.");
+					(((double)statVictories)/((double)statPlaythroughs))*(100) + "%.");
 		}
 		
 		btnOptionB.addActionListener(new ActionListener() {
