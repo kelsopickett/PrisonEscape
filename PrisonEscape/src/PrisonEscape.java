@@ -398,11 +398,6 @@ public class PrisonEscape {
 	}
 	
 	
-	private void stripLessAction(){
-		btnOptionB.removeActionListener(btnOptionB.getActionListeners()[0]);
-		btnOptionC.removeActionListener(btnOptionC.getActionListeners()[0]);
-	}
-	
 	private void stripThreeAction(){
 		btnOptionA.removeActionListener(btnOptionA.getActionListeners()[0]);
 		btnOptionB.removeActionListener(btnOptionB.getActionListeners()[0]);
