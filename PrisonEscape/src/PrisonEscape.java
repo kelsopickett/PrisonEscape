@@ -360,15 +360,16 @@ public class PrisonEscape {
 		textShanks.setText(Integer.toString(player.getShankCount()));
 	}
 	
-	/**
-	 * This method removes the action listeners from buttons A-D so that they may be assigned new action listeners in the subsequent scene
+	/* This method has been deprecated in favor of stripSpecificActionListeners
+	 *  Previously, this method removed the action listeners from buttons A-D so that could be assigned new action listeners in the subsequent screen
+	 *  
+	 * 	private void stripActionListeners() {
+	 * 		btnOptionA.removeActionListener(btnOptionA.getActionListeners()[0]);
+	 * 		btnOptionB.removeActionListener(btnOptionB.getActionListeners()[0]);
+	 * 		btnOptionC.removeActionListener(btnOptionC.getActionListeners()[0]);
+	 * 		btnOptionD.removeActionListener(btnOptionD.getActionListeners()[0]);
+	 * 	}
 	 */
-	private void stripActionListeners() {
-		btnOptionA.removeActionListener(btnOptionA.getActionListeners()[0]);
-		btnOptionB.removeActionListener(btnOptionB.getActionListeners()[0]);
-		btnOptionC.removeActionListener(btnOptionC.getActionListeners()[0]);
-		btnOptionD.removeActionListener(btnOptionD.getActionListeners()[0]);
-	}
 	
 	/**
 	 * This method removes the action listeners for the buttons specified in the parameters:
@@ -455,7 +456,7 @@ public class PrisonEscape {
 				// Increment scene counter
 				currentScene++;
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				// Advance to next scene
 				sceneTwo();
 			}
@@ -471,7 +472,7 @@ public class PrisonEscape {
 				// Increment scene counter
 				currentScene++;
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				// Advance to next scene
 				sceneTwo();
 			}
@@ -484,7 +485,7 @@ public class PrisonEscape {
 				// Render result of choice and description of next scene
 				textArea.setText(gitmo[currentScene].resultC);
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				gameOver();
 			}
 		});
@@ -498,7 +499,7 @@ public class PrisonEscape {
 				// Increment scene counter
 				currentScene++;
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				// Advance to next scene
 				sceneTwo();
 			}
@@ -519,7 +520,7 @@ public class PrisonEscape {
 				// Increment scene counter
 				currentScene++;
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				// Advance to next scene
 				sceneThree();
 			}
@@ -538,14 +539,14 @@ public class PrisonEscape {
 					// Increment scene counter
 					currentScene++;
 					// Unassign actions from buttons so they can be reassigned in gameOver
-					stripActionListeners();
+					stripSpecificActionListeners(1,1,1,1);
 					// Advance to next scene
 					sceneThree();
 				}
 				else {
 					// Render result of choice
 					textArea.setText(gitmo[currentScene].resultB);
-					stripActionListeners();
+					stripSpecificActionListeners(1,1,1,1);
 					gameOver();
 					
 				}
@@ -560,7 +561,7 @@ public class PrisonEscape {
 				// Render result of choice
 				textArea.setText(gitmo[currentScene].resultC);
 				// Unassign actions from buttons so they can be reassigned in gameOver
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				gameOver();
 			}
 		});
@@ -575,7 +576,7 @@ public class PrisonEscape {
 				// Increment scene counter
 				currentScene++;
 				// Unassign actions from buttons so they can be reassigned in gameOver
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				// Advance to next scene
 				sceneThree();
 			}
@@ -598,7 +599,7 @@ public class PrisonEscape {
 				// Render result of choice
 				textArea.setText(gitmo[currentScene].resultA);
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				gameOver();
 			}
 		});
@@ -610,7 +611,7 @@ public class PrisonEscape {
 				// Increment scene counter
 				currentScene++;
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				// Advance to next scene
 				sceneFour();
 			}
@@ -625,7 +626,7 @@ public class PrisonEscape {
 				// Render result of choice
 				textArea.setText(gitmo[currentScene].resultC);
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				gameOver();
 			}
 		});
@@ -639,7 +640,7 @@ public class PrisonEscape {
 				// Increment scene counter
 				currentScene++;
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				// Advance to next scene
 				sceneFour();
 			}
@@ -662,7 +663,7 @@ public class PrisonEscape {
 				// Render result of choice
 				textArea.setText(gitmo[currentScene].resultA);
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				gameOver();
 			}
 		});
@@ -676,7 +677,7 @@ public class PrisonEscape {
 				// Render result of choice
 				textArea.setText(gitmo[currentScene].resultB);
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				gameOver();
 			}
 		});
@@ -690,7 +691,7 @@ public class PrisonEscape {
 				// Render result of choice
 				textArea.setText(gitmo[currentScene].resultC);
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				gameOver();
 			}
 		});
@@ -704,7 +705,7 @@ public class PrisonEscape {
 				// Increment scene counter
 				currentScene++;
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				// Advance to next scene
 				sceneFive();
 			}
@@ -731,14 +732,14 @@ public class PrisonEscape {
 					// Increment scene counter
 					currentScene++;
 					// Unassign actions from buttons so they can be reassigned in next scene
-					stripActionListeners();
+					stripSpecificActionListeners(1,1,1,1);
 					// Advance to next scene
 					sceneSix();
 				}
 				else {
 					// Render result of choice
 					textArea.setText(gitmo[currentScene].resultA);
-					stripActionListeners();
+					stripSpecificActionListeners(1,1,1,1);
 					gameOver();
 				}
 			}
@@ -752,7 +753,7 @@ public class PrisonEscape {
 				// Render result of choice
 				textArea.setText(gitmo[currentScene].resultB);
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				gameOver();
 			}
 		});
@@ -767,7 +768,7 @@ public class PrisonEscape {
 					// Increment scene counter
 					currentScene++;
 					// Unassign actions from buttons so they can be reassigned in next scene
-					stripActionListeners();
+					stripSpecificActionListeners(1,1,1,1);
 					// Advance to next scene
 					sceneSix();
 				}
@@ -781,7 +782,7 @@ public class PrisonEscape {
 					// Reset scene counter
 					currentScene = 0;
 					// Unassign actions from buttons so they can be reassigned in next scene
-					stripActionListeners();
+					stripSpecificActionListeners(1,1,1,1);
 					// Return to first scene
 					sceneOne();
 				}
@@ -793,7 +794,7 @@ public class PrisonEscape {
 				// Render result of choice
 				textArea.setText(gitmo[currentScene].resultD);
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				// Initiate timed delay so user can read the result of their choice before returning to first scene
 				Timer delay = new Timer(10000, new ActionListener() {
 					@Override
@@ -824,7 +825,7 @@ public class PrisonEscape {
 				// Render result of choice
 				textArea.setText(gitmo[currentScene].resultA);
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				gameOver();
 			}
 		});
@@ -842,7 +843,7 @@ public class PrisonEscape {
 					// Increment scene counter
 					currentScene++;
 					// Unassign actions from buttons so they can be reassigned in next scene
-					stripActionListeners();
+					stripSpecificActionListeners(1,1,1,1);
 					// Advance to next scene
 					sceneSeven();
 				}
@@ -850,7 +851,7 @@ public class PrisonEscape {
 					// Render result of choice
 					textArea.setText(gitmo[currentScene].resultB);
 					// Unassign actions from buttons so they can be reassigned in next scene
-					stripActionListeners();
+					stripSpecificActionListeners(1,1,1,1);
 					gameOver();
 				}
 			}
@@ -868,7 +869,7 @@ public class PrisonEscape {
 				// Increment scene counter
 				currentScene++;
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				// Advance to next scene
 				sceneSeven();
 			}
@@ -884,7 +885,7 @@ public class PrisonEscape {
 				// Increment scene counter
 				currentScene++;
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				// Advance to next scene
 				sceneSeven();
 			}
@@ -910,7 +911,7 @@ public class PrisonEscape {
 					// Increment scene counter
 					currentScene++;
 					// Unassign actions from buttons so they can be reassigned in next scene
-					stripActionListeners();
+					stripSpecificActionListeners(1,1,1,1);
 					// Advance to next scene
 					sceneEight();
 				}
@@ -921,7 +922,7 @@ public class PrisonEscape {
 					textArea.setText("You decide to throw your knife at the bus driver. It's a long shot, but you only have one chance.\n\nBut luck is not on"
 							+ " your side; the handle bounces off windshield. The warden doesn't take kindly to having deadly objects thrown at him and runs you"
 							+ " down with ten tons of American-made steel retribution.");
-					stripActionListeners();
+					stripSpecificActionListeners(1,1,1,1);
 					gameOver();
 				}
 			}
@@ -932,7 +933,7 @@ public class PrisonEscape {
 				// Render result of choice
 				textArea.setText(gitmo[currentScene].resultB);
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				// Initiate timed delay so user can read the result of their choice before returning to first scene
 				Timer delay = new Timer(10000, new ActionListener() {
 					@Override
@@ -955,7 +956,7 @@ public class PrisonEscape {
 				// Render result of choice
 				textArea.setText(gitmo[currentScene].resultC);
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				gameOver();
 			}
 		});
@@ -969,7 +970,7 @@ public class PrisonEscape {
 				// Increment scene counter
 				currentScene++;
 				// Unassign actions from buttons so they can be reassigned in next scene
-				stripActionListeners();
+				stripSpecificActionListeners(1,1,1,1);
 				// Advance to next scene
 				sceneEight();
 			}
