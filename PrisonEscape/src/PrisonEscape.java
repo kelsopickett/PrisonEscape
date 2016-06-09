@@ -396,13 +396,6 @@ public class PrisonEscape {
 			btnOptionD.removeActionListener(btnOptionD.getActionListeners()[0]);
 		}
 	}
-	
-	
-	private void stripThreeAction(){
-		btnOptionA.removeActionListener(btnOptionA.getActionListeners()[0]);
-		btnOptionB.removeActionListener(btnOptionB.getActionListeners()[0]);
-		btnOptionC.removeActionListener(btnOptionC.getActionListeners()[0]);
-	}
 
 	protected void sceneOne() {
 		// Render first scene description in textArea, user options in buttons A-D, and update display of player stats
@@ -973,13 +966,13 @@ public class PrisonEscape {
 				currentScene = 0;
 				// Restore visibility of fourth button
 				btnOptionD.setVisible(true);
-				stripThreeAction();
+				stripSpecificActionListeners(1,1,1,0);
 				sceneOne();
 			}
 		});
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripThreeAction();
+				stripSpecificActionListeners(1,1,1,0);
 				mainMenu();
 			}
 		});
@@ -1054,19 +1047,19 @@ public class PrisonEscape {
 		// Create action listeners for these new choices
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripThreeAction();
+				stripSpecificActionListeners(1,1,1,0);
 				mainMenu();
 			}
 		});
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripThreeAction();
+				stripSpecificActionListeners(1,1,1,0);
 				about();
 			}
 		});
 		btnOptionC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripThreeAction();
+				stripSpecificActionListeners(1,1,1,0);
 				statistics();
 			}
 		});
