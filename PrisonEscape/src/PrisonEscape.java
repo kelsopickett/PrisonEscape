@@ -1127,9 +1127,9 @@ public class PrisonEscape {
 	
 	protected void statistics() {
 		// Set appropriate button visibility
-		buttonVisibility(0,1,1,0);
-		btnOptionB.setText("Main Menu");
-		btnOptionC.setText("Extras");
+		buttonVisibility(1,0,0,1);
+		btnOptionA.setText("Back to Extras");
+		btnOptionD.setText("Back to Main Menu");
 		if (statPlaythroughs < 1) {
 			textArea.setText("In this session you've:\n\n ... played " + statPlaythroughs + " times.\n\n ... won " + statVictories + " times.\n\n ... accumulated "
 					+ statHighscore + " cigrettes in a single playthrough.\n\n ... entered combat " + statCombats + " times.\n\nYour success rate can't be calculated"
@@ -1140,17 +1140,16 @@ public class PrisonEscape {
 					+ statHighscore + " cigrettes in a single playthrough.\n\n ... entered combat " + statCombats + " times.\n\nYour success rate is " +
 					(((double)statVictories)/((double)statPlaythroughs))*(100) + "%.");
 		}
-		
-		btnOptionB.addActionListener(new ActionListener() {
+		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(0,1,1,0);
-				mainMenu();
-			}
-		});	
-		btnOptionC.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(0,1,1,0);
+				stripSpecificActionListeners(1,0,0,1);
 				extras();
+			}
+		});
+		btnOptionD.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				stripSpecificActionListeners(1,0,0,1);
+				mainMenu();
 			}
 		});
 	}
