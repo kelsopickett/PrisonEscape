@@ -426,6 +426,125 @@ public class PrisonEscape {
 			btnOptionD.setVisible(true);
 		}
 	}
+	
+	protected void mainMenu(){
+		// Set appropriate button visibility
+		buttonVisibility(1,1,0,1);
+	    btnOptionA.setText("New Game");
+    	btnOptionB.setText("Extras");
+    	btnOptionD.setText("Quit");
+		currentScene = 0;
+		textArea.setText("Welcome to Escape from Guantanamo Bay!"
+				+ "\n\nClick \"New Game\" to start a new game or \"Extras\" for more information.");
+		// Create action listeners for these new choices
+		btnOptionA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				player.refreshStats(player);
+				stripSpecificActionListeners(1,1,0,1);
+				sceneOne();
+			}
+		});
+		btnOptionB.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				stripSpecificActionListeners(1,1,0,1);
+				extras();
+			}
+		}); 
+		btnOptionD.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+	}
+	
+	protected void extras() {
+		// Set appropriate button visibility
+		buttonVisibility(1,1,0,1);
+		//Set description and button text
+		textArea.setText("Escape from Guantanamo Bay is a text-based adventure game in which you have been imprisoned and must fight for your life to escape"
+				+ " during a prisoner uprising. The plot advances based on, and responding to, player choice, offering a unique experience with each playthrough."
+				+ "\n\nCharacter information (shown across the top of the window) is updated with each choice you make during the story.\n  Finding a shank"
+				+ " will increase your attack damage by 25\n  Finding or crafting toilet wine will increase your health\n  Escape with as many smokes as possible"
+				+ " to set a new high score");
+		btnOptionA.setText("About");
+		btnOptionB.setText("Statistics");
+		btnOptionD.setText("Back to Main Menu");
+		// Set button actions
+		btnOptionA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				stripSpecificActionListeners(1,1,0,1);
+				about();
+			}
+		});
+		btnOptionB.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				stripSpecificActionListeners(1,1,0,1);
+				statistics();
+			}
+		});
+		btnOptionD.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				stripSpecificActionListeners(1,1,0,1);
+				mainMenu();
+			}
+		});
+	}
+	
+	protected void about() {
+		// Set appropriate button visibility
+		buttonVisibility(1,0,0,1);
+		// Set button and description text
+		textArea.setText("This game was authored by Paul Jerome, Brittany Mahoney, Colby Pernela and Kelso Pickett for Caleb Horst's Java Programming class"
+				+ " (CS142) at Tacoma Community College in Spring 2016."
+				+ "\n\nSource and revision history are available at https://github.com/kelsopickett/PrisonEscape"
+				+ "\n\nStory by: Paul Jerome, Brittany Mahoney, Colby Pernela, Kelso Pickett"
+				+ "\n\nScript by: Kelso Pickett"
+				+ "\n\nCode by: Paul Jerome, Kelso Pickett"
+				+ "\n\nAdditional Design by: Brittany Mahoney, Colby Pernela");
+		btnOptionA.setText("Back to Extras");
+		btnOptionD.setText("Back to Main Menu");
+		btnOptionA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				stripSpecificActionListeners(1,0,0,1);
+				extras();
+			}
+		});
+		btnOptionD.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				stripSpecificActionListeners(1,0,0,1);
+				mainMenu();
+			}
+		});
+	}
+	
+	protected void statistics() {
+		// Set appropriate button visibility
+		buttonVisibility(1,0,0,1);
+		btnOptionA.setText("Back to Extras");
+		btnOptionD.setText("Back to Main Menu");
+		if (statPlaythroughs < 1) {
+			textArea.setText("In this session you've:\n\n ... played " + statPlaythroughs + " times.\n\n ... won " + statVictories + " times.\n\n ... accumulated "
+					+ statHighscore + " cigrettes in a single playthrough.\n\n ... entered combat " + statCombats + " times.\n\nYour success rate can't be calculated"
+					+ " because you haven't yet played!");
+		}
+		else {
+			textArea.setText("In this session you've:\n\n ... played " + statPlaythroughs + " times.\n\n ... won " + statVictories + " times.\n\n ... accumulated " 
+					+ statHighscore + " cigrettes in a single playthrough.\n\n ... entered combat " + statCombats + " times.\n\nYour success rate is " +
+					(((double)statVictories)/((double)statPlaythroughs))*(100) + "%.");
+		}
+		btnOptionA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				stripSpecificActionListeners(1,0,0,1);
+				extras();
+			}
+		});
+		btnOptionD.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				stripSpecificActionListeners(1,0,0,1);
+				mainMenu();
+			}
+		});
+	}
 
 	protected void sceneOne() {
 		// Render first scene description in textArea, user options in buttons A-D, and update display of player stats
@@ -1035,125 +1154,6 @@ public class PrisonEscape {
 		btnOptionC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
-			}
-		});
-	}
-	
-	protected void mainMenu(){
-		// Set appropriate button visibility
-		buttonVisibility(1,1,0,1);
-	    btnOptionA.setText("New Game");
-    	btnOptionB.setText("Extras");
-    	btnOptionD.setText("Quit");
-		currentScene = 0;
-		textArea.setText("Welcome to Escape from Guantanamo Bay!"
-				+ "\n\nClick \"New Game\" to start a new game or \"Extras\" for more information.");
-		// Create action listeners for these new choices
-		btnOptionA.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				player.refreshStats(player);
-				stripSpecificActionListeners(1,1,0,1);
-				sceneOne();
-			}
-		});
-		btnOptionB.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(1,1,0,1);
-				extras();
-			}
-		}); 
-		btnOptionD.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
-	}
-	
-	protected void extras() {
-		// Set appropriate button visibility
-		buttonVisibility(1,1,0,1);
-		//Set description and button text
-		textArea.setText("Escape from Guantanamo Bay is a text-based adventure game in which you have been imprisoned and must fight for your life to escape"
-				+ " during a prisoner uprising. The plot advances based on, and responding to, player choice, offering a unique experience with each playthrough."
-				+ "\n\nCharacter information (shown across the top of the window) is updated with each choice you make during the story.\n  Finding a shank"
-				+ " will increase your attack damage by 25\n  Finding or crafting toilet wine will increase your health\n  Escape with as many smokes as possible"
-				+ " to set a new high score");
-		btnOptionA.setText("About");
-		btnOptionB.setText("Statistics");
-		btnOptionD.setText("Back to Main Menu");
-		// Set button actions
-		btnOptionA.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(1,1,0,1);
-				about();
-			}
-		});
-		btnOptionB.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(1,1,0,1);
-				statistics();
-			}
-		});
-		btnOptionD.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(1,1,0,1);
-				mainMenu();
-			}
-		});
-	}
-	
-	protected void about() {
-		// Set appropriate button visibility
-		buttonVisibility(1,0,0,1);
-		// Set button and description text
-		textArea.setText("This game was authored by Paul Jerome, Brittany Mahoney, Colby Pernela and Kelso Pickett for Caleb Horst's Java Programming class"
-				+ " (CS142) at Tacoma Community College in Spring 2016."
-				+ "\n\nSource and revision history are available at https://github.com/kelsopickett/PrisonEscape"
-				+ "\n\nStory by: Paul Jerome, Brittany Mahoney, Colby Pernela, Kelso Pickett"
-				+ "\n\nScript by: Kelso Pickett"
-				+ "\n\nCode by: Paul Jerome, Kelso Pickett"
-				+ "\n\nAdditional Design by: Brittany Mahoney, Colby Pernela");
-		btnOptionA.setText("Back to Extras");
-		btnOptionD.setText("Back to Main Menu");
-		btnOptionA.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(1,0,0,1);
-				extras();
-			}
-		});
-		btnOptionD.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(1,0,0,1);
-				mainMenu();
-			}
-		});
-	}
-	
-	protected void statistics() {
-		// Set appropriate button visibility
-		buttonVisibility(1,0,0,1);
-		btnOptionA.setText("Back to Extras");
-		btnOptionD.setText("Back to Main Menu");
-		if (statPlaythroughs < 1) {
-			textArea.setText("In this session you've:\n\n ... played " + statPlaythroughs + " times.\n\n ... won " + statVictories + " times.\n\n ... accumulated "
-					+ statHighscore + " cigrettes in a single playthrough.\n\n ... entered combat " + statCombats + " times.\n\nYour success rate can't be calculated"
-					+ " because you haven't yet played!");
-		}
-		else {
-			textArea.setText("In this session you've:\n\n ... played " + statPlaythroughs + " times.\n\n ... won " + statVictories + " times.\n\n ... accumulated " 
-					+ statHighscore + " cigrettes in a single playthrough.\n\n ... entered combat " + statCombats + " times.\n\nYour success rate is " +
-					(((double)statVictories)/((double)statPlaythroughs))*(100) + "%.");
-		}
-		btnOptionA.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(1,0,0,1);
-				extras();
-			}
-		});
-		btnOptionD.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(1,0,0,1);
-				mainMenu();
 			}
 		});
 	}
