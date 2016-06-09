@@ -1038,25 +1038,31 @@ public class PrisonEscape {
 	
 	protected void mainMenu(){
 		// Set appropriate button visibility
-		buttonVisibility(0,1,1,0);
-	    btnOptionB.setText("New Game");
-    	btnOptionC.setText("Extras");
+		buttonVisibility(1,1,0,1);
+	    btnOptionA.setText("New Game");
+    	btnOptionB.setText("Extras");
+    	btnOptionD.setText("Quit");
 		currentScene = 0;
 		textArea.setText("Welcome to Escape from Guantanamo Bay! Click \"New Game\" to begin.");	
 		// Create action listeners for these new choices
-		btnOptionB.addActionListener(new ActionListener() {
+		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				player.refreshStats(player);
-				stripSpecificActionListeners(0,1,1,0);
+				stripSpecificActionListeners(1,1,0,1);
 				sceneOne();
 			}
 		});
-		btnOptionC.addActionListener(new ActionListener() {
+		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(0,1,1,0);
+				stripSpecificActionListeners(1,1,0,1);
 				extras();
 			}
 		}); 
+		btnOptionD.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 	}
 	
 	protected void extras() {
