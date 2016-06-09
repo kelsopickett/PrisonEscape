@@ -885,7 +885,7 @@ public class PrisonEscape {
 					player.setSmokes(-player.getSmokes());
 					// Render result of choice when player has fewer than a whole pack of smokes
 					textArea.setText("Thinking quickly, you pull out a pack of cigarettes and offer them to the guard.\n\n\"This all you got? You gotta be"
-							+ " fuckin' kidding me, it ain't even a whole pack! I'm taking you back to your cell.\"");
+							+ " fuckin' kidding me, this ain't even a whole pack! I'm taking you back to your cell.\"");
 					// Initiate a timed delay so the user can read the result of their choice before returning to the first scene
 					Timer delay = new Timer(10_000, new ActionListener() {
 						@Override
@@ -898,6 +898,8 @@ public class PrisonEscape {
 							sceneOne();
 						}
 					});
+					delay.setRepeats(false);
+					delay.start();
 				}
 			}
 		});
