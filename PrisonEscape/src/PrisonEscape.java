@@ -166,14 +166,6 @@ public class PrisonEscape {
 			+ " dead or unconscious. Somehow you seem to be free, you make a run for the entry gate.");
 	Scene escape = new Scene("The gravel makes a satisfying sound beneath your feet as you walk out the gate. You take a deep"
 		+ " breath of fresh, Cuban air and a moment to revel in the sunset. You are free.");
-
-	// These scenes and array were used in various capacities during testing, but not in the current release
-	/*
-	 * Scene fightScreen = new Scene("You are fighting!", "Attack!?" , "Kill yourself!?");
-	 * Scene startScreen = new Scene("Welcome to Escape From Guantanamo Bay, please click an option below", "Start new game", "Exit Application");
-	 * Scene gameOver = new Scene("Wow your a loser, GAME OVER!!!!!", "Start a new game", "Exit Application");
-	 * private Scene[] misc = {startScreen,gameOver};
-	 */
 	
 	// Initialise array of scenes
 	private Scene[] gitmo = {cell, cellblock, cafeteria, kitchen, yard, infirmary, entrance, escape};	
@@ -334,7 +326,7 @@ public class PrisonEscape {
 		
 		textEscape = new JTextPane();
 		textEscape.setEditable(false);
-		textEscape.setBounds(220, 120, 300, 60);
+		textEscape.setBounds(170, 120, 300, 60);
 		frame.getContentPane().add(textEscape);
 		textEscape.setVisible(false);
 		SimpleAttributeSet styleEscape = new SimpleAttributeSet();  
@@ -355,7 +347,7 @@ public class PrisonEscape {
 	}
 	
 	/**
-	 * This method updates the player's stats (health, atk dmg, # smokes, # wine consumed, # shanks (possessed + used)
+	 * This method updates the player's stats (health, attack damage, # smokes, # wine consumed, # shanks (possessed + used)
 	 */
 	private void updateStats() {
 		textHealth.setText(Integer.toString(player.getHealth()));
@@ -1043,7 +1035,8 @@ public class PrisonEscape {
     	btnOptionB.setText("Extras");
     	btnOptionD.setText("Quit");
 		currentScene = 0;
-		textArea.setText("Welcome to Escape from Guantanamo Bay! Click \"New Game\" to begin.");	
+		textArea.setText("Welcome to Escape from Guantanamo Bay!"
+				+ "\n\nClick \"New Game\" to start a new game or \"Extras\" for more information.");
 		// Create action listeners for these new choices
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
