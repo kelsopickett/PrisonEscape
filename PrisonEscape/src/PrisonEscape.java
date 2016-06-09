@@ -956,9 +956,9 @@ public class PrisonEscape {
 		textEscape.setText("YOU HAVE ESCAPED");
 		// Update player choices (unlike previous scenes, these are unique to the Game Over scenario)
 		btnOptionA.setText("New Game+");
-		btnOptionB.setText("Main Menu");
-		btnOptionC.setText("Quit");
-		btnOptionD.setVisible(false);
+		btnOptionB.setVisible(false);
+		btnOptionC.setText("Main Menu");
+		btnOptionD.setText("Quit");
 		// Create action listeners for these new choices
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
