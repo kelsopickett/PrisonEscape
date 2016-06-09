@@ -1067,29 +1067,29 @@ public class PrisonEscape {
 	
 	protected void extras() {
 		// Set appropriate button visibility
-		buttonVisibility(1,1,1,0);
+		buttonVisibility(1,1,0,1);
 		//Set button and description text
 		textArea.setText("Please select an option from the choices below:");
-		btnOptionA.setText("Main menu");
-		btnOptionB.setText("About");
-		btnOptionC.setText("Statistics");
+		btnOptionA.setText("About");
+		btnOptionB.setText("Statistics");
+		btnOptionD.setText("Back to Main menu");
 		// Create action listeners for these new choices
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(1,1,1,0);
-				mainMenu();
+				stripSpecificActionListeners(1,1,0,1);
+				about();
 			}
 		});
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(1,1,1,0);
-				about();
+				stripSpecificActionListeners(1,1,0,1);
+				statistics();
 			}
 		});
-		btnOptionC.addActionListener(new ActionListener() {
+		btnOptionD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(1,1,1,0);
-				statistics();
+				stripSpecificActionListeners(1,1,0,1);
+				mainMenu();
 			}
 		});
 	}
