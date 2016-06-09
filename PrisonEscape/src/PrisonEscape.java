@@ -340,7 +340,7 @@ public class PrisonEscape {
 	}
 
 	/**
-	 * This method updates the choices available to the user on buttons A-D
+	 * This method updates the choices available to the user as shown on buttons A-D
 	 */
 	private void updateChoices() {
 		btnOptionA.setText(gitmo[currentScene].choiceA);
@@ -361,7 +361,7 @@ public class PrisonEscape {
 	}
 	
 	/**
-	 * This method removes the action listeners from all four buttons so that they may be assigned new action listeners in the subsequent scene
+	 * This method removes the action listeners from buttons A-D so that they may be assigned new action listeners in the subsequent scene
 	 */
 	private void stripActionListeners() {
 		btnOptionA.removeActionListener(btnOptionA.getActionListeners()[0]);
@@ -372,10 +372,10 @@ public class PrisonEscape {
 	
 	/**
 	 * This method removes the action listeners for the buttons specified in the parameters:
-	 * parameter: int a -- if passed a '1', will strip the action listener for btnA
-	 * parameter: int b -- if passed a '1', will strip the action listener for btnB
-	 * parameter: int c -- if passed a '1', will strip the action listener for btnC
-	 * parameter: int d -- if passed a '1', will strip the action listener for btnD
+	 * @param a -- if passed a '1', will strip the action listener for btnA
+	 * @param b -- if passed a '1', will strip the action listener for btnB
+	 * @param c -- if passed a '1', will strip the action listener for btnC
+	 * @param d -- if passed a '1', will strip the action listener for btnD
 	 */
 	private void stripSpecificActionListeners(int a, int b, int c, int d) {
 		if (a == 1) {
@@ -392,6 +392,13 @@ public class PrisonEscape {
 		}
 	}
 	
+	/**
+	 * This method offers an independent binary toggle for the visibility of each button A-D:
+	 * @param a: when passed a '0', will set btnOptionA visibility to 'false'; when passed a '1', will set btnOptionA visibility to 'true'
+	 * @param b: when passed a '0', will set btnOptionB visibility to 'false'; when passed a '1', will set btnOptionB visibility to 'true'
+	 * @param c: when passed a '0', will set btnOptionC visibility to 'false'; when passed a '1', will set btnOptionC visibility to 'true'
+	 * @param d: when passed a '0', will set btnOptionD visibility to 'false'; when passed a '1', will set btnOptionD visibility to 'true'
+	 */
 	private void buttonVisibility(int a, int b, int c, int d) {
 		if (a == 0) {
 			btnOptionA.setVisible(false);
