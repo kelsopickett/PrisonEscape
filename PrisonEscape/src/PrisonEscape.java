@@ -1010,9 +1010,7 @@ public class PrisonEscape {
 		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Actualize player effects
-				//int winChance = rng.nextInt(100) + 1;
-				int winChance = 100;
-				System.out.println(winChance);
+				int winChance = rng.nextInt(100) + 1;
 				if (winChance == 100) {
 					// Render result of choice and description of next scene
 					textArea.setText(gitmo[currentScene].resultA + "\n\n" + gitmo[(currentScene + 1)].description);
