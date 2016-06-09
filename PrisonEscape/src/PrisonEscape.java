@@ -1009,7 +1009,7 @@ public class PrisonEscape {
 		// Create action listeners for these new choices
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripLessAction();	
+				stripSpecificActionListeners(0,1,1,0);
 				mainMenu();
 			}
 		});
@@ -1033,14 +1033,14 @@ public class PrisonEscape {
 				btnOptionA.setVisible(true);
 				btnOptionD.setVisible(true);
 				player.refreshStats(player);
-				stripLessAction();					
+				stripSpecificActionListeners(0,1,1,0);
 				sceneOne();
 			}
 		});
 		btnOptionC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnOptionA.setVisible(true);
-				stripLessAction();
+				stripSpecificActionListeners(0,1,1,0);
 				extras();
 			}
 		}); 
@@ -1092,13 +1092,13 @@ public class PrisonEscape {
 		btnOptionC.setText("Extras");
 		btnOptionB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripLessAction();
+				stripSpecificActionListeners(0,1,1,0);
 				mainMenu();
 			}
 		});
 		btnOptionC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripLessAction();
+				stripSpecificActionListeners(0,1,1,0);
 				extras();
 			}
 		});
