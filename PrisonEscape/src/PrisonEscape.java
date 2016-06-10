@@ -97,63 +97,64 @@ public class PrisonEscape {
 		"A smile crosses his face. \"Hell yeah!\" he exclaims, his contagious laughter filling the room. \"You always were too clever for your own good.\"");
 	Scene yard = new Scene("Your answer satisfies the cook.\n\nHe ushers you toward the back of the room and into the rubbish chute. You slide down, landing"
 				+ " in a dumpster below.\n\nYou stand to find yourself outside in one of the exercise yards.\n\nAs you vault out of the dumpster, a guard shouts"
-				+ " \"HALT OR I WILL FUCKING TASE YOU!\".\n\nWhat do you do?", 
+				+ " \"HALT OR I WILL FUCKING END YOU!\".\n\nWhat do you do?", 
 		"Make a break for it.", "Scramble back up the rubbish chute.", "Bribe the guard with cigarettes.", "Surrender.", 
 		"You decide to ignore the guard and make a break for it.\n\nUnfortunately, the guard is in much better condition than a malnourished prisoner like you."
 				+ " He catches you with relative ease and grabs you by the collar. You kick him and he stumbles backward, then draws his Taser from its holster."
 				+ "\n\nYou must defend yourself.", 
-		"You decide to scurry back up the garbage shoot, back the way you came.\n\nYou turn around, digging your fingernails into the grimy metal chute as you"
-				+ " struggle to ascend.\n\nThe distinctive sound of a Taser rings out behind you, its probes planting in the small of your back. The electrical"
-				+ " current flows through you, your body seizing and sliding down the chute into the dumpster below.\n\n You lay there, paralysed as the officer"
-				+ " stands over you. You watch in horror as he removes his firearm from its holster, discharging three shots into your chest.\n\nHe puts on his"
-				+ " aviators, and in true David Caruso fashion, mutters, \"Guess I'll leave this one to go out with the trash.\"", 
+		"You scurry back up the garbage shoot, hoping to reach the relative safety of the kitchen above.\n\nYou turn around, digging your fingernails into the"
+				+ " grimy metal chute as you struggle to ascend.\n\nThe distinctive sound of a Taser rings out behind you, its probes planting in the small of"
+				+ " your back. The electrical current flows through you, your body seizing and sliding down the chute into the dumpster below.\n\n You lay there,"
+				+ " paralysed as the officer stands over you. You watch in horror as he removes his firearm from its holster, discharging three shots into your"
+				+ " chest.\n\nHe puts on his aviators, and in true David Caruso fashion, mutters, \"Guess I'll leave this one to go out with the trash.\"", 
 		"Thinking quickly, you pull out a pack of cigarettes and offer them to the guard.\n\nHe smiles, “I should have you waterboarded for escaping from"
-				+ " your cell... but these are hard to come by, so I’ll look the other way this time.\"\n\n\"I’m going to walk the perimeter of the yard. If"
-				+ " you're still here when I get back, I'll be taking a hell of a lot more than your shitty smokes.\"\n\nYou know better than to tempt fate"
-				+ " again, and make like hell out of the yard.", 
-		"You decide that there is nowhere to go and that you have lost. You put your hands on your head and tell the guard that you surrender. The"
-				+ " guard puts handcuffs on you and takes you back to your cell.");
-	Scene infirmary = new Scene("You scramble toward and through the doors of the nearby infirmary, slamming them shut behind"
-			+ " you.\n\nAfter taking a moment to catch your breath, you turn and find yourself face to face with a nurse. He gives"
-			+ " you a puzzled look, \"You're in pretty bad shape. Let me help you.\"\n\nYou...", 
+				+ " your cell... but these are hard to come by, so I’ll look the other way this time.\"\n\nHis radio lights up with chatter, \"I have to take"
+				+ " this. If you're still here when I get back, I'll be taking a hell of a lot more than your shitty smokes.\"\n\nYou know better than to tempt"
+				+ " fate again, and make like hell out of the yard.", 
+		"Beaten and bruised, you know you've been bested.\n\nYou put your hands on your head and surrender to the guard. He cuffs you and leads you back to into"
+				+ " the concrete labyrinth...");
+	Scene infirmary = new Scene("Having dealt with the guard, you scramble toward and through the doors of the nearby infirmary, slamming them shut behind you."
+				+ "\n\nYou have but a moment to catch your breath, and when you lift your head you find yourself face to face with a nurse.\n\nYour sudden"
+				+ " appeaance is met by a puzzled look on his worn face, \"You're in pretty bad shape. Let me help you.\"\n\nYou...", 
 		"Accept offer of help.", "Fight the nurse.", "Ignore him and search the room for items.", "Have a mental breakdown.", 
-		"You are in no condition for a fight, and he seems a comforting combination of genuine and harmless.\n\nYou take a seat on a"
-			+ " nearby gurney and breath a deep sigh of relief. You can feel your heartbeat slow as the adrenaline fades from your system."
-			+ "\n\nThe nurse places a gloved hand on your shoulder, but when you turn to greet him a needle plunges into your neck. The"
-			+ " room starts to spin and you fall to the floor, paralysed.", 
-		"You've made it this far without much assistance, and you sure as hell don't need his.\n\n\"I don't need your help,\" you snarl,"
-			+ " hunkering down and clenching your fists. He lunges at you and a struggle ensues.", 
-		"You haven't any time to waste and, all things considered, medical staff is the least of your worries.\n\nthe nurse shuffles out "
-			+ "the way you entered as you move toward the cabinets at the back of the infirmary. The doors of all but one stand wide open--"
-			+ " they've already been raided. You hold your breath and pull the doors of the last cabinet open...\n\n\"Jackpot.\" Gauze,"
-			+ " bandages, and, best of all, morphine. You bandage yourself up as the narcotic's warm embrace washes over you.", 
-		"It was hard enough being falsely imprisoned, but this is too much to bear.\n\nYou crumple the floor, taking your face in your"
-			+ " hands as the nurse turns his back to you. You weep uncontrollably for minutes, maybe hours, until the nurse places a hand on"
-			+ " your shoulder. You look up, eyes red and swollen. \"Come here, let's have a look at you,\" he says reassuringly as he helps"
-			+ " you to your feet and over to a gurney. He bandages your wounds and doses you with something to dull the pain-- a warm, familiar"
-			+ " feeling washes over you. \"That should hold you over for now,\" he says, before sending you on your way.");
-	Scene entrance = new Scene("You emerge from the infirmary with a renewed sense of vigor. You stride grows larger as"
-			+ " each step takes you closer to the front gate, which is now in sight and slightly ajar.\n\nAs you draw near,"
-			+ " you realise it is not just ajar, but opening. The dull rumble of a disel motor grows louder with every inch it opens."
-			+ " With the gate mostly open, you see the prison bus barreling toward you with the warden behind the wheel.\n\n"
-			+ " In a split second, you decide to...", 
+		"You are in no condition for a fight, and he seems a comforting combination of genuine and harmless.\n\nYou take a seat on a nearby gurney and breathe a"
+				+ " deep sigh of relief. You can feel your heartbeat slow as the adrenaline fades from your system.\n\nThe nurse places a gloved hand on your"
+				+ " shoulder, but when you turn to greet him a needle plunges into your neck.\n\nThe room starts to spin and you fall to the floor, paralysed...", 
+		"You've made it this far without much assistance, and you sure as hell don't need his.\n\n\"I don't need your help,\" you snarl, hunkering down and"
+				+ " clenching your fists. He lunges at you and a struggle ensues.", 
+		"You haven't any time to waste and, all things considered, medical staff is the least of your worries.\n\nThe nurse shuffles out the way you entered"
+				+ " without another word as you move toward the cabinets at the back of the infirmary. The doors of all but one stand wide open-- they've already"
+				+ " been raided. You hold your breath and pull the doors of the last cabinet open...\n\n\"Jackpot.\" Gauze, bandages, and, best of all, morphine."
+				+ " You bandage your wounds as the narcotic's warm embrace washes over you.", 
+		"It was hard enough being falsely imprisoned, but this is too much to bear.\n\nYou crumple the floor, taking your face in your hands as the nurse turns"
+				+ " his back to you. You weep uncontrollably for minutes, maybe hours, until the nurse places a hand on your shoulder. You look up, eyes red and"
+				+ " swollen. \"Come here, let's have a look at you,\" he says reassuringly as he helps you to your feet and over to a gurney.\n\nHe bandages your"
+				+ " wounds and doses you with something to dull the pain-- a warm, familiar feeling washes over you. \"That should hold you over for now,\" he"
+				+ " says, before sending you on your way.");
+	Scene entrance = new Scene("You emerge from the infirmary with a renewed sense of vigor. You stride grows larger with each step carries you closer to the"
+				+ " front gate, which is now in sight and slightly ajar.\n\nAs you draw near, you realise it is not just ajar, but opening. The dull rumble of a"
+				+ " diesel motor grows louder with every inch it opens.\n\nWith the gate mostly open, you see the prison bus barreling toward you with the warden"
+				+ " behind the wheel.\n\nIn a split second, you decide to...", 
 		"Throw your knife at the warden.", "Run for your life.", "Take cover.", "Embrace your fate.", 
 		"You decide to throw your knife at the bus driver. It's a long shot, but you only have one chance.\n\nThe knife soars end-over-end through the air,"
 				+ " seemingly hanging there as if suspended in time. And as suddenly as it started, the blade breaks through the windscreen and lodges itself in"
-				+ " the warden's neck.\n\n\"Unbe-fucking-lievable...\" you mutter to yourself as you shuffle toward the entry gate.", 
-		"You decide to run from the bus. You take off running as fast as you can. The bus driver having never had a runaway before, gets a bit"
-			+ " too anxious to catch you and accelerates too quickly. The bus careens wildly into a nearby storage shed. You hear a loud"
-			+ " explosion and feel the heat of the flames as you are launched into a nearby wall. The world fades to black.", 
-		"You see the bus coming and decide your best choice of action is to try and hide. You quickly look around and notice a stack of tires by"
-			+ " a nearby garage. You run over to the garage and climb inside, doing your best to completely submerge yourself within the ring of"
-			+ " tires. In the end your efforts were in vain, because the bus driver saw you running and hit the gas. The last thing you remember"
-			+ " is the loud crash of the bus colliding with the pile of tires as you are crushed beneath the weight of the bus.", 
-		"You assess the situation and realize that there is no way you're getting out of this scenario alive. You want it to appear as if you are"
-			+ " cooperating, so you toss your knife onto the gravel in front of you. The bus driver doesn't appear to notice the knife as he drives"
-			+ " over it, popping a front tire in the process. The bus veers sharply and collides with the prison walls, the bus driver appears to be"
-			+ " dead or unconscious. Somehow you seem to be free, you make a run for the entry gate.");
-	Scene escape = new Scene("The gravel makes a satisfying sound beneath your feet as you walk out the gate. You take a deep"
-		+ " breath of fresh, Cuban air and a moment to revel in the sunset. You are free.");
+				+ " the warden's neck.\n\n\"Unbe-fucking-lievable...\" you mutter to yourself as you stumble toward the entry gate.", 
+		"You know this isn't a fight you can win and take off running as fast as you can.\n\nThe warden, caught offguard, is all to eager to run you down. In his"
+				+ " haste, he overestimates the handling capability of the bus.\n\nThe bus careens into a nearby storage shed with a thunderous sound. The"
+				+ " cacophony yields to an explosion-- the vehicle's fuel tank punctured by the steel shed. The heat of the flames laps at your back as you are"
+				+ " launched into a nearby wall.\n\nThe world fades to black...", 
+		"There's no way you can outrun a bus, and a knife isn't the pinnacle of anti-vehicle weaponry. Your best bet is to take cover and force the warden from"
+				+ " the vehicle.\n\nYou glance around and notice a stack of tires at the entrance of the vehicle maintenance bay. With no time to lose you sprint"
+				+ " to the garage and climb inside the tires, doing your best to completely shield yourself within.\n\nBut the warden tracked your move across"
+				+ " the yard and this isnt' a tire wall on a racing circuit. The warden hammers the throttle on a collision course.\n\nThe last thing you witness"
+				+ " is the cacophony of metal and brick, with tires flying in every direction... You are crushed beneath the weight of the bus.", 
+		"This is it. All those months spent inside, and this is how it ends... just inches from freedom.\n\nYou want it to be clear you're no threat, and"
+				+ " toss your knife onto the gravel well in front of you. But in his fury, the warden takes no notice of this  white flag.\n\nThe bus careens"
+				+ " down the gravel road, and the knife punctures the front driver's side tire. The warden can't correct the steering, and the bus veers sharply"
+				+ " to the left, coming to an abrupt halt as it crushes into the prison walls.\n\nThe warden, thrown from the cabin in the crash, lays face down"
+				+ " in the dirt. You approach with caution to find him either dead or unconscious, but you've no intention of sticking around to find out.");
+	Scene escape = new Scene("The gravel makes a satisfying crunch as it rolls beneath your feet as you pass over the threshold of the gate. You take a deep"
+				+ " breath of fresh, Cuban air and a moment to revel in the sunset.\n\nYou are free.");
 	// Initialise array of scenes
 	private Scene[] gitmo = {cell, cellblock, cafeteria, kitchen, yard, infirmary, entrance, escape};
 
