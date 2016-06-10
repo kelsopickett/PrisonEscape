@@ -1110,12 +1110,14 @@ public class PrisonEscape {
 			public void actionPerformed(ActionEvent e) {
 				// Reset scene counter
 				currentScene = 0;
+				textEscape.setVisible(false);
 				stripSpecificActionListeners(1,0,1,1);
 				sceneOne();
 			}
 		});
 		btnOptionC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				textEscape.setVisible(false);
 				stripSpecificActionListeners(1,0,1,1);
 				mainMenu();
 			}
@@ -1134,18 +1136,19 @@ public class PrisonEscape {
 		textGameOver.setText("Game Over");
 		textGameOver.setVisible(true);
 		// Set appropriate button visibility
-		buttonVisibility(0,1,1,0);
+		buttonVisibility(1,0,0,1);
 		// Update player choices (unlike previous scenes, these are unique to the Game Over scenario)
-		btnOptionB.setText("Main Menu");
-		btnOptionC.setText("Quit");
+		btnOptionA.setText("Back to Main Menu");
+		btnOptionD.setText("Quit");
 		// Create action listeners for these new choices
-		btnOptionB.addActionListener(new ActionListener() {
+		btnOptionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				stripSpecificActionListeners(0,1,1,0);
+				textGameOver.setVisible(false);
+				stripSpecificActionListeners(1,0,0,1);
 				mainMenu();
 			}
 		});
-		btnOptionC.addActionListener(new ActionListener() {
+		btnOptionD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
