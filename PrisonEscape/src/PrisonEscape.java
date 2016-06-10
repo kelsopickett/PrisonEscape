@@ -108,14 +108,14 @@ public class PrisonEscape {
 				+ " paralysed as the officer stands over you. You watch in horror as he removes his firearm from its holster, discharging three shots into your"
 				+ " chest.\n\nHe puts on his aviators, and in true David Caruso fashion, mutters, \"Guess I'll leave this one to go out with the trash.\"", 
 		"Thinking quickly, you pull out a pack of cigarettes and offer them to the guard.\n\nHe smiles, “I should have you waterboarded for escaping from"
-				+ " your cell... but these are hard to come by, so I’ll look the other way this time.\"\n\nHis radio lights up with chatter, \"I have to take"
+				+ " your cell... but these are hard to come by, so I’ll look the other way this time.\"His radio lights up with chatter, \"I have to take"
 				+ " this. If you're still here when I get back, I'll be taking a hell of a lot more than your shitty smokes.\"\n\nYou know better than to tempt"
 				+ " fate again, and make like hell out of the yard.", 
 		"Beaten and bruised, you know you've been bested.\n\nYou put your hands on your head and surrender to the guard. He cuffs you and leads you back to into"
 				+ " the concrete labyrinth...");
 	Scene infirmary = new Scene("Having dealt with the guard, you scramble toward and through the doors of the nearby infirmary, slamming them shut behind you."
 				+ "\n\nYou have but a moment to catch your breath, and when you lift your head you find yourself face to face with a nurse.\n\nYour sudden"
-				+ " appeaance is met by a puzzled look on his worn face, \"You're in pretty bad shape. Let me help you.\"\n\nYou...", 
+				+ " appearance is met by a puzzled look on his worn face, \"You're in pretty bad shape. Let me help you.\"\n\nYou...", 
 		"Accept offer of help.", "Fight the nurse.", "Ignore him and search the room for items.", "Have a mental breakdown.", 
 		"You are in no condition for a fight, and he seems a comforting combination of genuine and harmless.\n\nYou take a seat on a nearby gurney and breathe a"
 				+ " deep sigh of relief. You can feel your heartbeat slow as the adrenaline fades from your system.\n\nThe nurse places a gloved hand on your"
@@ -127,12 +127,11 @@ public class PrisonEscape {
 				+ " been raided. You hold your breath and pull the doors of the last cabinet open...\n\n\"Jackpot.\" Gauze, bandages, and, best of all, morphine."
 				+ " You bandage your wounds as the narcotic's warm embrace washes over you.", 
 		"It was hard enough being falsely imprisoned, but this is too much to bear.\n\nYou crumple the floor, taking your face in your hands as the nurse turns"
-				+ " his back to you. You weep uncontrollably for minutes, maybe hours, until the nurse places a hand on your shoulder. You look up, eyes red and"
-				+ " swollen. \"Come here, let's have a look at you,\" he says reassuringly as he helps you to your feet and over to a gurney.\n\nHe bandages your"
-				+ " wounds and doses you with something to dull the pain-- a warm, familiar feeling washes over you. \"That should hold you over for now,\" he"
-				+ " says, before sending you on your way.");
-	Scene entrance = new Scene("You emerge from the infirmary with a renewed sense of vigor. You stride grows larger with each step carries you closer to the"
-				+ " front gate, which is now in sight and slightly ajar.\n\nAs you draw near, you realise it is not just ajar, but opening. The dull rumble of a"
+				+ " his back to you. You weep uncontrollably until he places a hand on your shoulder. You look up, eyes red and swollen. \"Come here, let's have"
+				+ " a look at you,\" he says reassuringly as he helps you over to a gurney.\n\nHe bandages your wounds and doses you with something to dull the"
+				+ " pain-- a warm, familiar feeling washes over you. \"That should hold you over for now,\" he says.");
+	Scene entrance = new Scene("You emerge from the infirmary with a renewed sense of vigor. Your stride grows larger with each step carries you closer to the"
+				+ " front gate, which is now in sight and slightly ajar. As you draw near, you realise it is not just ajar, but opening. The dull rumble of a"
 				+ " diesel motor grows louder with every inch it opens.\n\nWith the gate mostly open, you see the prison bus barreling toward you with the warden"
 				+ " behind the wheel.\n\nIn a split second, you decide to...", 
 		"Throw your knife at the warden.", "Run for your life.", "Take cover.", "Embrace your fate.", 
